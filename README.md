@@ -1,18 +1,5 @@
-## Hello World
+## Cucumber JVM for the bubobubo service
 
-This is the simplest possible setup for Cucumber-JVM using Java.
-
-### Ant
-
-Simply run:
-
-```
-ant download
-ant runcukes
-```
-
-This runs Cucumber features using the Command Line Interface (CLI) runner. Note that the `RunCukes` junit class is not used at all.
-If you remove it (and the `cucumber-junit` jar dependency), it will run just the same.
 
 ### Maven
 
@@ -37,10 +24,4 @@ With Maven:
 
 ```
 mvn -Dcucumber.options="--format junit:target/cucumber-junit-report.xml" test
-```
-
-Or with Ant:
-
-```
-_JAVA_OPTIONS='-Dcucumber.options="--format json-pretty:target/cucumber-json-report.json"' ant runcukes
 ```

@@ -6,6 +6,6 @@
 
     <context:property-placeholder location="properties/default.properties"/>
 
-    <context:component-scan base-package="com.bubobubo" />
+    <context:component-scan base-package="uk.co.bubobubo" />
 
 </beans>
