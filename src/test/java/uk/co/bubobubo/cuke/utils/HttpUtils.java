@@ -9,7 +9,6 @@ import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.params.BasicHttpParams;
 import org.apache.http.params.HttpParams;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import java.io.IOException;
@@ -23,20 +22,13 @@ import java.util.Map;
 @Component
 public class HttpUtils {
 
-	private static String bubobuboUrl;
-
-	@Value("${bubobubo.url}")
-	public void setBubobuboUrl(String url) {
-		bubobuboUrl = url;
-	}
-
 	public static HttpResponse httpGet(String relativeUri) throws IOException {
 		return httpGet(relativeUri, Collections.<String, String>emptyMap());
 	}
 
 	public static HttpResponse httpGet(String relativeUri, Map<String, String> headers) throws IOException {
 		DefaultHttpClient httpClient = new DefaultHttpClient();
-		HttpGet httpGet = new HttpGet(bubobuboUrl + relativeUri);
+		HttpGet httpGet = new HttpGet(relativeUri);
 		addHeadersToMethod(headers, httpGet);
 		return httpClient.execute(httpGet);
 	}
@@ -53,7 +45,7 @@ public class HttpUtils {
 	public static HttpResponse httpPost(String relativeUri, Map<String, Object> parameters, Map<String, String> headers, InputStream inputStream) throws IOException {
 
 		DefaultHttpClient httpClient = new DefaultHttpClient();
-		HttpPost httpPost = new HttpPost(bubobuboUrl + relativeUri);
+		HttpPost httpPost = new HttpPost(relativeUri);
 		if (parameters != null) {
 			List<BasicNameValuePair> p = new ArrayList<BasicNameValuePair>();
 			for (Map.Entry<String, Object> entry : parameters.entrySet()) {
@@ -92,7 +84,7 @@ public class HttpUtils {
 	public static HttpResponse httpDelete(String relativeUri, Map<String, String> headers) throws IOException {
 
 		DefaultHttpClient httpClient = new DefaultHttpClient();
-		HttpDelete httpDelete = new HttpDelete(bubobuboUrl + relativeUri);
+		HttpDelete httpDelete = new HttpDelete(relativeUri);
 		addHeadersToMethod(headers, httpDelete);
 		return httpClient.execute(httpDelete);
 
@@ -110,7 +102,7 @@ public class HttpUtils {
 	public static HttpResponse httpPut(String relativeUri, Map<String, Object> parameters, Map<String, String> headers, InputStream is) throws IOException {
 
 		DefaultHttpClient httpClient = new DefaultHttpClient();
-		HttpPut httpPut = new HttpPut(bubobuboUrl + relativeUri);
+		HttpPut httpPut = new HttpPut(relativeUri);
 		HttpParams httpParams = new BasicHttpParams();
 		if (parameters != null) {
 			for (String parameterName : parameters.keySet()) {
@@ -133,7 +125,7 @@ public class HttpUtils {
 	public static HttpResponse httpHead(String relativeUri, Map<String, String> headers) throws IOException {
 
 		DefaultHttpClient httpClient = new DefaultHttpClient();
-		HttpHead httpHead = new HttpHead(bubobuboUrl + relativeUri);
+		HttpHead httpHead = new HttpHead(relativeUri);
 		addHeadersToMethod(headers, httpHead);
 		return httpClient.execute(httpHead);
 
@@ -146,7 +138,7 @@ public class HttpUtils {
 	public static HttpResponse httpOptions(String relativeUri, Map<String, String> headers) throws IOException {
 
 		DefaultHttpClient httpClient = new DefaultHttpClient();
-		HttpOptions httpOptions = new HttpOptions(bubobuboUrl + relativeUri);
+		HttpOptions httpOptions = new HttpOptions(relativeUri);
 		addHeadersToMethod(headers, httpOptions);
 		return httpClient.execute(httpOptions);
 	}
@@ -157,7 +149,7 @@ public class HttpUtils {
 
 	public static HttpResponse httpTrace(String relativeUri, Map<String, String> headers) throws IOException {
 		DefaultHttpClient httpClient = new DefaultHttpClient();
-		HttpTrace httpTrace = new HttpTrace(bubobuboUrl + relativeUri);
+		HttpTrace httpTrace = new HttpTrace(relativeUri);
 		addHeadersToMethod(headers, httpTrace);
 		return httpClient.execute(httpTrace);
 
