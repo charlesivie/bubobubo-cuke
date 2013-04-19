@@ -1,14 +1,18 @@
 package uk.co.bubobubo.cuke.utils;
 
 import org.apache.commons.io.IOUtils;
+import org.apache.http.HttpRequest;
 import org.apache.http.HttpResponse;
+import org.apache.http.ProtocolException;
 import org.apache.http.client.CookieStore;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.*;
+import org.apache.http.client.params.ClientPNames;
 import org.apache.http.client.protocol.ClientContext;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.BasicCookieStore;
 import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.impl.client.DefaultRedirectStrategy;
 import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.params.BasicHttpParams;
 import org.apache.http.params.HttpParams;
@@ -188,7 +192,25 @@ public class HttpUtils {
 
 	private static HttpResponse execute(HttpRequestBase httpRequest) throws IOException {
 
-		DefaultHttpClient httpClient = new DefaultHttpClient();
+        DefaultHttpClient  httpClient = new DefaultHttpClient();
+        httpClient.getParams().setParameter(ClientPNames.ALLOW_CIRCULAR_REDIRECTS, true);
+        httpClient.setRedirectStrategy(new DefaultRedirectStrategy() {
+            public boolean isRedirected(HttpRequest request, HttpResponse response, HttpContext context) {
+                boolean isRedirect = false;
+                try {
+                    isRedirect = super.isRedirected(request, response, context);
+                } catch (ProtocolException e) {
+                    e.printStackTrace();
+                }
+                if (!isRedirect) {
+                    int responseCode = response.getStatusLine().getStatusCode();
+                    if (responseCode == 301 || responseCode == 302) {
+                        return true;
+                    }
+                }
+                return isRedirect;
+            }
+        });
 		if (inSession) {
 			return httpClient.execute(httpRequest, httpContext);
 		}

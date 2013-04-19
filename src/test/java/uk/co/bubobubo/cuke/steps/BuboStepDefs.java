@@ -78,7 +78,7 @@ public class BuboStepDefs {
 
 		// create user and repo
 		response = HttpUtils.httpPost(sparqlrUrl + "/account", params, headers);
-		assertEquals(EntityUtils.toString(response.getEntity()), 302, response.getStatusLine().getStatusCode());
+		assertEquals(EntityUtils.toString(response.getEntity()), 200, response.getStatusLine().getStatusCode());
 
 		params = new HashMap<String, Object>();
 		params.put("name", testRepo);

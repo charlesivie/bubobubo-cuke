@@ -6,6 +6,7 @@ Feature: query for sparql responses
 
   Scenario: Cannot create user if passwords dont match
 	Given Passwords do not match on create
+	And I create the test user and repo
 
   Scenario: perform get request
 	Given I start the http session
