@@ -17,10 +17,11 @@ import static org.junit.Assert.assertEquals;
 
 public class BuboStepDefs {
 
-	private String testRepo = "testrepo";
+	private String testRepo = "test-repo-1";
 	private String testRepoPass = "testrepopass";
 
 	private HttpResponse response;
+	private String testRepoDesc = "test-repo-one user by Cucumber JVM";
 
 	@Given("^bubobubo and sparqlr are running$")
     public void bubobubo_and_sparqlr_are_running() throws Throwable {
@@ -78,7 +79,31 @@ public class BuboStepDefs {
 		// create user and repo
 		response = HttpUtils.httpPost(sparqlrUrl + "/account", params, headers);
 		assertEquals(EntityUtils.toString(response.getEntity()), 302, response.getStatusLine().getStatusCode());
+
+		params = new HashMap<String, Object>();
+		params.put("name", testRepo);
+		params.put("description", testRepoDesc);
+		params.put("password", testRepoPass);
+
+		response = HttpUtils.httpPost(sparqlrUrl + "/repositories/repository", params, headers);
+		assertEquals(EntityUtils.toString(response.getEntity()), 200, response.getStatusLine().getStatusCode());
+
     }
+
+	@And("^I start the http session$")
+	public void http_session_start() throws Throwable {
+
+		HttpUtils.startSession();
+
+	}
+
+	@And("^I end the http session$")
+	public void http_session_end() throws Throwable {
+
+		HttpUtils.endSession();
+
+	}
+
 
 
 	@When("^I get \"([^\"]*)\" as test user$")
