@@ -1,14 +1,17 @@
 package uk.co.bubobubo.cuke.utils;
 
+import cucumber.api.DataTable;
 import org.apache.commons.io.IOUtils;
 import org.apache.http.HttpRequest;
 import org.apache.http.HttpResponse;
+import org.apache.http.NameValuePair;
 import org.apache.http.ProtocolException;
 import org.apache.http.client.CookieStore;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.*;
 import org.apache.http.client.params.ClientPNames;
 import org.apache.http.client.protocol.ClientContext;
+import org.apache.http.client.utils.URIBuilder;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.BasicCookieStore;
 import org.apache.http.impl.client.DefaultHttpClient;
@@ -23,6 +26,8 @@ import org.springframework.stereotype.Component;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -45,6 +50,19 @@ public class HttpUtils {
 		addHeadersToMethod(headers, httpGet);
 		return execute(httpGet);
 	}
+
+    public static HttpResponse httpGet(String relativeUri, List<BasicNameValuePair> parameters) throws IOException, URISyntaxException {
+
+        HttpGet httpGet = new HttpGet(relativeUri);
+        URIBuilder uriBuilder = new URIBuilder(httpGet.getURI());
+
+        for(BasicNameValuePair nvp :parameters){
+            uriBuilder.addParameter(nvp.getName(), nvp.getValue());
+        }
+        httpGet.setURI(uriBuilder.build());
+
+        return execute(httpGet);
+    }
 
 	public static HttpResponse httpPost(String relativeUri, Map<String, Object> parameters) throws IOException {
 		return httpPost(relativeUri, parameters, Collections.<String, String>emptyMap());

@@ -1,16 +1,21 @@
 package uk.co.bubobubo.cuke.steps;
 
+import cucumber.api.DataTable;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import cucumber.runtime.PendingException;
 import org.apache.http.HttpResponse;
+import org.apache.http.NameValuePair;
+import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.util.EntityUtils;
 import org.springframework.beans.factory.annotation.Value;
 import uk.co.bubobubo.cuke.utils.HttpUtils;
 
+import java.net.URLEncoder;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import static org.junit.Assert.assertEquals;
@@ -106,19 +111,17 @@ public class BuboStepDefs {
 
 
 
-	@When("^I get \"([^\"]*)\" as test user$")
-	public void I_get_as_user(String uri) throws Throwable {
+    @When("^I get \"([^\"]*)\" as test user with parameters$")
+    public void I_get_as_test_user_with_parameters(String path, List<BasicNameValuePair> params) throws Throwable {
+        // Express the Regexp above with the code you wish you had
+		String urlWithCredentials = bubobuboUrl.replace("http://", "http://"+testRepo+":"+testRepoPass+"@") + path;
+        response = HttpUtils.httpGet(urlWithCredentials, params);
+    }
 
-		String urlWithCredentials = bubobuboUrl.replace("http://", "http://"+testRepo+":"+testRepoPass+"@");
-
-		response = HttpUtils.httpGet(urlWithCredentials + uri);
-		assertEquals(EntityUtils.toString(response.getEntity()), 200, response.getStatusLine().getStatusCode());
-	}
 
     @Then("^I should get a (\\d+) response code$")
-    public void I_should_get_a_response_code(int arg1) throws Throwable {
-        // Express the Regexp above with the code you wish you had
-        throw new PendingException();
+    public void I_should_get_a_response_code(int code) throws Throwable {
+        assertEquals(EntityUtils.toString(response.getEntity()), code, response.getStatusLine().getStatusCode());
     }
 
 	private static String bubobuboUrl;
