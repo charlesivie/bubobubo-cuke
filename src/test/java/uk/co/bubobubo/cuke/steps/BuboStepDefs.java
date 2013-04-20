@@ -109,7 +109,12 @@ public class BuboStepDefs {
 
 	}
 
-
+    @When("^I get \"([^\"]*)\" with parameters$")
+    public void I_get_with_parameters(String path, List<BasicNameValuePair> params) throws Throwable {
+        // Express the Regexp above with the code you wish you had
+        String urlWithCredentials = bubobuboUrl + path;
+        response = HttpUtils.httpGet(urlWithCredentials, params);
+    }
 
     @When("^I get \"([^\"]*)\" as test user with parameters$")
     public void I_get_as_test_user_with_parameters(String path, List<BasicNameValuePair> params) throws Throwable {

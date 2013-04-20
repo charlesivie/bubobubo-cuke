@@ -203,7 +203,7 @@ public class HttpUtils {
 	}
 
 	public static void endSession() {
-		httpContext.removeAttribute(ClientContext.COOKIE_STORE);
+        httpContext = null;
 		inSession = false;
 	}
 
