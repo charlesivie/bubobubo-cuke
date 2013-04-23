@@ -82,5 +82,11 @@ Feature: query for sparql responses
     Then I should get a 200 response code
     And the response body should match the file "rdf/statements_context.xml"
 
+  Scenario: signup create repo and perform statements delete query
+    Given I start the http session
+    And I create the test user and repo
+    When I delete "/repositories/test-repo-1/statements"
+    Then I should get a 204 response code
+
 
 

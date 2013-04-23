@@ -4,6 +4,7 @@ import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import cucumber.runtime.PendingException;
 import org.apache.commons.io.FileUtils;
 import org.apache.http.HttpResponse;
 import org.custommonkey.xmlunit.XMLUnit;
@@ -175,4 +176,9 @@ public class BuboStepDefs {
 		sparqlrUrl = url;
 	}
 
+    @When("^I delete \"([^\"]*)\"$")
+    public void I_delete(String path) throws Throwable {
+        String urlWithCredentials = bubobuboUrl.replace("http://", "http://" + testRepo + ":" + testRepoPass + "@") + path;
+        response = HttpUtils.httpDelete(urlWithCredentials);
+    }
 }
