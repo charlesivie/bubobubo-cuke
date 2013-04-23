@@ -12,7 +12,6 @@ import org.apache.http.client.protocol.ClientContext;
 import org.apache.http.client.utils.URIBuilder;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.BasicCookieStore;
-import org.apache.http.impl.client.BasicResponseHandler;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.impl.client.DefaultRedirectStrategy;
 import org.apache.http.message.BasicNameValuePair;
@@ -20,6 +19,7 @@ import org.apache.http.params.BasicHttpParams;
 import org.apache.http.params.HttpParams;
 import org.apache.http.protocol.BasicHttpContext;
 import org.apache.http.protocol.HttpContext;
+import org.apache.http.util.EntityUtils;
 import org.springframework.stereotype.Component;
 import uk.co.bubobubo.cuke.bean.RequestAttribute;
 
@@ -59,8 +59,24 @@ public class HttpUtils {
 		return execute(method);
 	}
 
-	public static HttpResponse httpPost(String relativeUri, Map<String, Object> parameters) throws IOException {
-		return httpPost(relativeUri, parameters, Collections.<String, String>emptyMap());
+	public static HttpResponse httpPost(String relativeUri, List<RequestAttribute> parameters) throws IOException, URISyntaxException {
+
+
+		HttpPost method = new HttpPost(relativeUri);
+		URIBuilder uriBuilder = new URIBuilder(method.getURI());
+
+		for (RequestAttribute attribute : parameters) {
+			if (attribute.getType().equalsIgnoreCase("HEADER")) {
+				method.addHeader(attribute.getName(), attribute.getValue());
+			}
+			if (attribute.getType().equalsIgnoreCase("PARAMETER")) {
+				uriBuilder.addParameter(attribute.getName(), attribute.getValue());
+			}
+		}
+
+		method.setURI(uriBuilder.build());
+
+		return execute(method);
 	}
 
 	public static HttpResponse httpPost(String relativeUri, Map<String, Object> parameters, Map<String, String> headers) throws IOException {
@@ -237,8 +253,7 @@ public class HttpUtils {
 	}
 
 	private static HttpResponse processResponse(HttpResponse response) throws IOException {
-		BasicResponseHandler responseHandler = new BasicResponseHandler();
-		responseAsString = responseHandler.handleResponse(response);
+		responseAsString = EntityUtils.toString(response.getEntity());
 		return response;
 	}
 }

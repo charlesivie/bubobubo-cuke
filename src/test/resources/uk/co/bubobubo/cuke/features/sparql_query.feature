@@ -27,11 +27,9 @@ Feature: query for sparql responses
 	Given I start the http session
 	And I create the test user and repo
 	When I get "/repositories/test-repo-1" with
-	  | type      | name   | value                       |
-	  | parameter | query  | select * where { ?s ?p ?o } |
-	  | header    | accept | text/turtle                 |
+	  | type      | name  | value                       |
+	  | parameter | query | select * where { ?s ?p ?o } |
 	Then I should get a 200 response code
-	And the response body should match the file "foo_bar.xml"
 
   Scenario: signup create repo and perform ask query
 	Given I start the http session
@@ -49,6 +47,21 @@ Feature: query for sparql responses
 	  | type      | name    | value            |
 	  | parameter | query   | select <foo:bar> |
 	  | parameter | queryLn | serql            |
+	  | header    | accept  | application/xml  |
 	Then I should get a 200 response code
 	And the response body should match the file "foo_bar.xml"
+
+
+  Scenario: signup create repo and perform construct sparql query
+	Given I start the http session
+	And I create the test user and repo
+	When I post to "/repositories/test-repo-1" with
+	  | type      | name         | value                                 |
+	  | parameter | query        | construct {?s ?p ?o} where {?s ?p ?o} |
+	  | header    | accept       | application/rdf+xml, */*;q=0.5        |
+	  | header    | Content-Type | application/x-www-form-urlencoded     |
+	Then I should get a 200 response code
+	And the response body should match the file "sparql/construct.xml"
+
+
 
