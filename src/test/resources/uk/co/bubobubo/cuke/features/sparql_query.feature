@@ -82,6 +82,14 @@ Feature: query for sparql responses
     Then I should get a 200 response code
     And the response body should match the file "rdf/statements_context.xml"
 
+  Scenario: signup create repo and perform statements post query
+    Given I start the http session
+    And I create the test user and repo
+    When I post "rdf/music.xml" to "/repositories/test-repo-1/statements" with
+      | type   | name         | value                             |
+      | header | Content-Type | application/rdf+xml;charset=UTF-8 |
+    Then I should get a 204 response code
+
   Scenario: signup create repo and perform statements delete query
     Given I start the http session
     And I create the test user and repo

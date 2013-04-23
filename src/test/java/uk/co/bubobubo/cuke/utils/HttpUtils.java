@@ -1,28 +1,31 @@
 package uk.co.bubobubo.cuke.utils;
 
 import org.apache.commons.io.IOUtils;
-import org.apache.http.HttpRequest;
-import org.apache.http.HttpResponse;
-import org.apache.http.ProtocolException;
+import org.apache.http.*;
 import org.apache.http.client.CookieStore;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.*;
 import org.apache.http.client.params.ClientPNames;
 import org.apache.http.client.protocol.ClientContext;
 import org.apache.http.client.utils.URIBuilder;
+import org.apache.http.entity.ContentType;
+import org.apache.http.entity.InputStreamEntity;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.BasicCookieStore;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.impl.client.DefaultRedirectStrategy;
+import org.apache.http.message.BasicHeaderElement;
 import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.params.BasicHttpParams;
 import org.apache.http.params.HttpParams;
 import org.apache.http.protocol.BasicHttpContext;
 import org.apache.http.protocol.HttpContext;
 import org.apache.http.util.EntityUtils;
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Component;
 import uk.co.bubobubo.cuke.bean.RequestAttribute;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
@@ -79,6 +82,40 @@ public class HttpUtils {
         return execute(method);
     }
 
+    public static HttpResponse httpPost(String relativeUri, List<RequestAttribute> parameters, String fileLocation) throws IOException, URISyntaxException {
+
+
+        ClassPathResource classPathResource = new ClassPathResource("payload/" + fileLocation);
+        InputStream inputStream = classPathResource.getInputStream();
+
+        HttpPost method = new HttpPost(relativeUri);
+        URIBuilder uriBuilder = new URIBuilder(method.getURI());
+        String contentType = null;
+
+        for (RequestAttribute attribute : parameters) {
+            if (attribute.getType().equalsIgnoreCase("HEADER")) {
+                method.addHeader(attribute.getName(), attribute.getValue());
+                if (attribute.getName().equalsIgnoreCase("content-type")) {
+                    contentType = attribute.getValue();
+                }
+            }
+            if (attribute.getType().equalsIgnoreCase("PARAMETER")) {
+                uriBuilder.addParameter(attribute.getName(), attribute.getValue());
+            }
+        }
+
+        method.setURI(uriBuilder.build());
+
+        addBodyToClient(
+                inputStream,
+                classPathResource.getFile().length(),
+                ContentType.parse(contentType),
+                method
+        );
+
+        return execute(method);
+    }
+
     public static HttpResponse httpPost(String relativeUri, Map<String, Object> parameters, Map<String, String> headers) throws IOException {
         return httpPost(relativeUri, parameters, headers, null);
 
@@ -105,6 +142,13 @@ public class HttpUtils {
 
     }
 
+    private static void addBodyToClient(InputStream inputStream, long length, ContentType contentType, HttpEntityEnclosingRequestBase httpEntityEnclosingRequestBase) {
+        if (inputStream == null) {
+            return;
+        }
+        httpEntityEnclosingRequestBase.setEntity(new InputStreamEntity(inputStream, length, contentType));
+
+    }
 
     private static void addBodyToClient(InputStream inputStream, HttpEntityEnclosingRequestBase httpEntityEnclosingRequestBase) {
         if (inputStream == null) {

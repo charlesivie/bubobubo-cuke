@@ -59,6 +59,14 @@ public class BuboStepDefs {
 	}
 
 
+    @When("^I post \"([^\"]*)\" to \"([^\"]*)\" with$")
+    public void I_post_to_with(String fileLocation, String path, List<RequestAttribute> params) throws Throwable {
+        // Express the Regexp above with the code you wish you had
+        String urlWithCredentials = bubobuboUrl.replace("http://", "http://" + testRepo + ":" + testRepoPass + "@") + path;
+        response = HttpUtils.httpPost(urlWithCredentials, params, fileLocation);
+    }
+
+
 	@When("^I get \"([^\"]*)\" as unauthorised with$")
 	public void I_get_unauth(String path, List<RequestAttribute> params) throws Throwable {
 		// Express the Regexp above with the code you wish you had
@@ -181,4 +189,5 @@ public class BuboStepDefs {
         String urlWithCredentials = bubobuboUrl.replace("http://", "http://" + testRepo + ":" + testRepoPass + "@") + path;
         response = HttpUtils.httpDelete(urlWithCredentials);
     }
+
 }
