@@ -1,25 +1,23 @@
 package uk.co.bubobubo.cuke.steps;
 
-import cucumber.api.DataTable;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import cucumber.runtime.PendingException;
+import org.apache.commons.io.FileUtils;
 import org.apache.http.HttpResponse;
-import org.apache.http.NameValuePair;
-import org.apache.http.message.BasicNameValuePair;
-import org.apache.http.util.EntityUtils;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.core.io.ClassPathResource;
 import uk.co.bubobubo.cuke.bean.RequestAttribute;
 import uk.co.bubobubo.cuke.utils.HttpUtils;
 
-import java.net.URLEncoder;
+import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import static org.custommonkey.xmlunit.XMLAssert.assertXMLEqual;
 import static org.junit.Assert.assertEquals;
 
 public class BuboStepDefs {
@@ -28,12 +26,13 @@ public class BuboStepDefs {
     private String testRepoPass = "testrepopass";
 
     private HttpResponse response;
+
     private String testRepoDesc = "test-repo-one user by Cucumber JVM";
 
     @Given("^bubobubo and sparqlr are running$")
     public void bubobubo_and_sparqlr_are_running() throws Throwable {
 
-        response = HttpUtils.httpGet(bubobuboUrl, new ArrayList<RequestAttribute>());
+        response = HttpUtils.httpGet(bubobuboUrl + "/protocol", new ArrayList<RequestAttribute>());
 
         assertEquals(200, response.getStatusLine().getStatusCode());
 
@@ -65,7 +64,7 @@ public class BuboStepDefs {
         String username = "test@user.com";
         String password = "password";
         response = HttpUtils.httpDelete(sparqlrUrl + "/account/?username=" + username + "&password=" + password);
-        assertEquals(EntityUtils.toString(response.getEntity()), 200, response.getStatusLine().getStatusCode());
+        assertEquals(HttpUtils.responseAsString, 200, response.getStatusLine().getStatusCode());
 
     }
 
@@ -81,7 +80,7 @@ public class BuboStepDefs {
 
         // create user and repo
         response = HttpUtils.httpPost(sparqlrUrl + "/account", params, headers);
-        assertEquals(EntityUtils.toString(response.getEntity()), 200, response.getStatusLine().getStatusCode());
+        assertEquals(HttpUtils.responseAsString, 200, response.getStatusLine().getStatusCode());
     }
 
 
@@ -99,7 +98,7 @@ public class BuboStepDefs {
 
         // create user and repo
         response = HttpUtils.httpPost(sparqlrUrl + "/account", params, headers);
-        assertEquals(EntityUtils.toString(response.getEntity()), 200, response.getStatusLine().getStatusCode());
+        assertEquals(HttpUtils.responseAsString, 200, response.getStatusLine().getStatusCode());
 
         params = new HashMap<String, Object>();
         params.put("name", testRepo);
@@ -107,7 +106,7 @@ public class BuboStepDefs {
         params.put("password", testRepoPass);
 
         response = HttpUtils.httpPost(sparqlrUrl + "/repositories/repository", params, headers);
-        assertEquals(EntityUtils.toString(response.getEntity()), 200, response.getStatusLine().getStatusCode());
+        assertEquals(HttpUtils.responseAsString, 200, response.getStatusLine().getStatusCode());
 
     }
 
@@ -127,25 +126,45 @@ public class BuboStepDefs {
 
     @Then("^I should get a (\\d+) response code$")
     public void I_should_get_a_response_code(int code) throws Throwable {
-        assertEquals(EntityUtils.toString(response.getEntity()), code, response.getStatusLine().getStatusCode());
-    }
-
-    private static String bubobuboUrl;
-
-    @Value("${bubobubo.url}")
-    public void setBubobuboUrl(String url) {
-        bubobuboUrl = url;
-    }
-
-    private static String sparqlrUrl;
-
-    @Value("${sparqlr.url}")
-    public void setSparqlrUrl(String url) {
-        sparqlrUrl = url;
+        assertEquals(HttpUtils.responseAsString, code, response.getStatusLine().getStatusCode());
     }
 
     @And("^the response should be \"([^\"]*)\"$")
     public void the_response_should_be(String arg1) throws Throwable {
-        assertEquals(arg1, EntityUtils.toString(response.getEntity()));
+        assertEquals(arg1, HttpUtils.responseAsString);
     }
+
+	@Then("^the response body should match the file \"([^\"]*)\"$")
+	public void the_response_body_should_match_the_file(String classpathFileLocation) throws Throwable {
+		File file = new ClassPathResource("expected/" + classpathFileLocation).getFile();
+
+		String expected = FileUtils.readFileToString(file);
+		String actual = HttpUtils.responseAsString;
+
+		if(classpathFileLocation.toLowerCase().endsWith(".xml")){
+			assertXMLEqual(expected, actual);
+		}
+		else{
+			assertEquals(expected, actual);
+		}
+
+	}
+
+
+
+
+	private static String bubobuboUrl;
+
+	@Value("${bubobubo.url}")
+	public void setBubobuboUrl(String url) {
+		bubobuboUrl = url;
+	}
+
+	private static String sparqlrUrl;
+
+	@Value("${sparqlr.url}")
+	public void setSparqlrUrl(String url) {
+		sparqlrUrl = url;
+	}
+
 }
