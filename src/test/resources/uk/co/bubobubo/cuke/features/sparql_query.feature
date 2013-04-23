@@ -76,10 +76,11 @@ Feature: query for sparql responses
     Given I start the http session
     And I create the test user and repo
     When I get "/repositories/test-repo-1/statements" with
-      | type   | name   | value               |
-      | header | accept | application/rdf+xml |
+      | type      | name    | value               |
+      | header    | accept  | application/rdf+xml |
+      | parameter | context | _:n1234x5678        |
     Then I should get a 200 response code
-    And the response body should match the file "rdf/statements.xml"
+    And the response body should match the file "rdf/statements_context.xml"
 
 
 
