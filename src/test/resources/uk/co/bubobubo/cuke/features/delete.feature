@@ -10,4 +10,4 @@ Feature: Delete is blocked through bubobubo
     And I create the test user and repo
     And I end the http session
     When I delete "/repositories/test-repo-1"
-    Then I should get a 401 response code
+    Then I should get a 403 response code
