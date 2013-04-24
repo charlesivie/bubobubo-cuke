@@ -40,18 +40,6 @@ Feature: query for sparql responses
       | header    | Accept | text/boolean, */*;q=0.5 |
     And the response should be "true"
 
-  Scenario: signup create repo and perform serql query
-    Given I start the http session
-    And I create the test user and repo
-    When I get "/repositories/test-repo-1" with
-      | type      | name    | value                                     |
-      | parameter | query   | select <foo:bar>                          |
-      | parameter | queryLn | serql                                     |
-      | header    | accept  | application/sparql-results+xml, */*;q=0.5 |
-    Then I should get a 200 response code
-    And the response body should match the file "foo_bar.xml"
-
-
   Scenario: signup create repo and perform construct sparql query
     Given I start the http session
     And I create the test user and repo
@@ -62,39 +50,6 @@ Feature: query for sparql responses
       | header    | Content-Type | application/x-www-form-urlencoded     |
     Then I should get a 200 response code
     And the response body should match the file "sparql/construct.xml"
-
-  Scenario: signup create repo and perform statements query
-    Given I start the http session
-    And I create the test user and repo
-    When I get "/repositories/test-repo-1/statements" with
-      | type   | name   | value               |
-      | header | accept | application/rdf+xml |
-    Then I should get a 200 response code
-    And the response body should match the file "rdf/statements.xml"
-
-  Scenario: signup create repo and perform statements context query
-    Given I start the http session
-    And I create the test user and repo
-    When I get "/repositories/test-repo-1/statements" with
-      | type      | name    | value               |
-      | header    | accept  | application/rdf+xml |
-      | parameter | context | _:n1234x5678        |
-    Then I should get a 200 response code
-    And the response body should match the file "rdf/statements_context.xml"
-
-  Scenario: signup create repo and perform statements post query
-    Given I start the http session
-    And I create the test user and repo
-    When I post "rdf/music.xml" to "/repositories/test-repo-1/statements" with
-      | type   | name         | value                             |
-      | header | Content-Type | application/rdf+xml;charset=UTF-8 |
-    Then I should get a 204 response code
-
-  Scenario: signup create repo and perform statements delete query
-    Given I start the http session
-    And I create the test user and repo
-    When I delete "/repositories/test-repo-1/statements"
-    Then I should get a 204 response code
 
 
 
