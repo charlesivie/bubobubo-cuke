@@ -166,6 +166,15 @@
                 </filters>
             </build>
         </profile>
+
+        <profile>
+            <id>int</id>
+            <build>
+                <filters>
+                    <filter>src/main/resources/properties/environment/int.properties</filter>
+                </filters>
+            </build>
+        </profile>
     </profiles>
 
 
