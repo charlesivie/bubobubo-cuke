@@ -12,3 +12,5 @@ Feature: Contexts endpoint
 	  | type   | name   | value                          |
 	  | header | Accept | application/sparql-results+xml |
 	Then I should get a 200 response code
+
+    Scenario: I clean up
