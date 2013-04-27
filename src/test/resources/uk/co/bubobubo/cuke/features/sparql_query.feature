@@ -51,5 +51,5 @@ Feature: query for sparql responses
     Then I should get a 200 response code
     And the response body should match the file "sparql/construct.xml"
 
-
+  Scenario: I clean up
 
