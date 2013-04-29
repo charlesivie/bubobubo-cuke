@@ -53,3 +53,5 @@ Feature: statements endpoint
 	And I create the test user and repo
 	When I delete "/repositories/test-repo-1/statements"
 	Then I should get a 204 response code
+
+  Scenario: I clean up

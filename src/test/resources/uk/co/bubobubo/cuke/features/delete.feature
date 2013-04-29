@@ -17,3 +17,5 @@ Feature: Delete is blocked through bubobubo
 	And I end the http session
 	When I delete "/repositories/test-repo-1"
 	Then I should get a 401 response code
+
+  Scenario: I clean up

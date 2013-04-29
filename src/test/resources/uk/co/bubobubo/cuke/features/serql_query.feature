@@ -15,3 +15,5 @@ Feature: query for serql responses
 	  | header    | accept  | application/sparql-results+xml, */*;q=0.5 |
 	Then I should get a 200 response code
 	And the response body should match the file "serql/foo_bar.xml"
+
+  Scenario: I clean up
