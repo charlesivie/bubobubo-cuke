@@ -76,8 +76,8 @@ public class BuboStepDefs {
 
 	@When("^I get \"([^\"]*)\" as unauthorised with$")
 	public void I_get_unauth(String path, List<RequestAttribute> params) throws Throwable {
-		// Express the Regexp above with the code you wish you had
-		String urlWithCredentials = bubobuboUrl + path;
+
+        String urlWithCredentials = bubobuboUrl + path;
 		response = HttpUtils.httpGet(urlWithCredentials, params);
 	}
 
@@ -150,12 +150,12 @@ public class BuboStepDefs {
 
 	@Then("^I should get a (\\d+) response code$")
 	public void I_should_get_a_response_code(int code) throws Throwable {
-		assertEquals(HttpUtils.responseAsString, code, response.getStatusLine().getStatusCode());
+		assertEquals(code, response.getStatusLine().getStatusCode());
 	}
 
 	@And("^the response should be \"([^\"]*)\"$")
-	public void the_response_should_be(String arg1) throws Throwable {
-		assertEquals(arg1, HttpUtils.responseAsString);
+	public void the_response_should_be(String responseAsString) throws Throwable {
+		assertEquals(responseAsString, HttpUtils.responseAsString);
 	}
 
 	@Then("^the response body should match the file \"([^\"]*)\"$")
