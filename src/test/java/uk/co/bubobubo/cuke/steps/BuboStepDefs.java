@@ -4,7 +4,6 @@ import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import cucumber.runtime.PendingException;
 import org.apache.commons.io.FileUtils;
 import org.apache.http.HttpResponse;
 import org.custommonkey.xmlunit.XMLUnit;
@@ -14,10 +13,7 @@ import uk.co.bubobubo.cuke.bean.RequestAttribute;
 import uk.co.bubobubo.cuke.utils.HttpUtils;
 
 import java.io.File;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 import static org.custommonkey.xmlunit.XMLAssert.assertXMLEqual;
 import static org.junit.Assert.assertEquals;
@@ -44,28 +40,39 @@ public class BuboStepDefs {
 
 	}
 
+    @When("^I get \"([^\"]*)\"$")
+    public void I_get(String path) throws Throwable {
+        String urlWithCredentials = bubobuboUrl.replace("http://", "http://" + testRepo + ":" + testRepoPass + "@") + path;
+        response = HttpUtils.httpGet(urlWithCredentials, Collections.<RequestAttribute>emptyList());
+    }
+
+    @When("^I get \"([^\"]*)\" as unauthorised$")
+    public void I_get_unauth(String path) throws Throwable {
+
+        String urlWithCredentials = bubobuboUrl + path;
+        response = HttpUtils.httpGet(urlWithCredentials, Collections.<RequestAttribute>emptyList());
+    }
+
 	@When("^I get \"([^\"]*)\" with$")
 	public void I_get_with(String path, List<RequestAttribute> params) throws Throwable {
-		// Express the Regexp above with the code you wish you had
-		String urlWithCredentials = bubobuboUrl.replace("http://", "http://" + testRepo + ":" + testRepoPass + "@") + path;
+
+        String urlWithCredentials = bubobuboUrl.replace("http://", "http://" + testRepo + ":" + testRepoPass + "@") + path;
 		response = HttpUtils.httpGet(urlWithCredentials, params);
 	}
 
 	@When("^I post to \"([^\"]*)\" with$")
 	public void I_post_with(String path, List<RequestAttribute> params) throws Throwable {
-		// Express the Regexp above with the code you wish you had
-		String urlWithCredentials = bubobuboUrl.replace("http://", "http://" + testRepo + ":" + testRepoPass + "@") + path;
+
+        String urlWithCredentials = bubobuboUrl.replace("http://", "http://" + testRepo + ":" + testRepoPass + "@") + path;
 		response = HttpUtils.httpPost(urlWithCredentials, params);
 	}
 
-
     @When("^I post \"([^\"]*)\" to \"([^\"]*)\" with$")
     public void I_post_to_with(String fileLocation, String path, List<RequestAttribute> params) throws Throwable {
-        // Express the Regexp above with the code you wish you had
+
         String urlWithCredentials = bubobuboUrl.replace("http://", "http://" + testRepo + ":" + testRepoPass + "@") + path;
         response = HttpUtils.httpPost(urlWithCredentials, params, fileLocation);
     }
-
 
 	@When("^I get \"([^\"]*)\" as unauthorised with$")
 	public void I_get_unauth(String path, List<RequestAttribute> params) throws Throwable {
