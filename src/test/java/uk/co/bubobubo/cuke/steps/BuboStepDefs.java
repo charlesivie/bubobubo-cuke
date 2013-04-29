@@ -81,7 +81,7 @@ public class BuboStepDefs {
 		String username = "test@user.com";
 		String password = "password";
 		response = HttpUtils.httpDelete(sparqlrUrl + "/account/?username=" + username + "&password=" + password);
-		assertEquals(HttpUtils.responseAsString, 200, response.getStatusLine().getStatusCode());
+		assertEquals(200, response.getStatusLine().getStatusCode());
 
 	}
 
@@ -97,7 +97,7 @@ public class BuboStepDefs {
 
 		// create user and repo
 		response = HttpUtils.httpPost(sparqlrUrl + "/account", params, headers);
-		assertEquals(HttpUtils.responseAsString, 200, response.getStatusLine().getStatusCode());
+		assertEquals(200, response.getStatusLine().getStatusCode());
 	}
 
 
@@ -115,7 +115,7 @@ public class BuboStepDefs {
 
 		// create user and repo
 		response = HttpUtils.httpPost(sparqlrUrl + "/account", params, headers);
-		assertEquals(HttpUtils.responseAsString, 200, response.getStatusLine().getStatusCode());
+		assertEquals(200, response.getStatusLine().getStatusCode());
 
 		params = new HashMap<String, Object>();
 		params.put("name", testRepo);
@@ -123,7 +123,7 @@ public class BuboStepDefs {
 		params.put("password", testRepoPass);
 
 		response = HttpUtils.httpPost(sparqlrUrl + "/repositories/repository", params, headers);
-		assertEquals(HttpUtils.responseAsString, 200, response.getStatusLine().getStatusCode());
+		assertEquals(200, response.getStatusLine().getStatusCode());
 
 	}
 
