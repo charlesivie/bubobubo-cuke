@@ -4,6 +4,7 @@ import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import cucumber.runtime.PendingException;
 import org.apache.commons.io.FileUtils;
 import org.apache.http.HttpResponse;
 import org.custommonkey.xmlunit.XMLUnit;
@@ -26,8 +27,10 @@ public class BuboStepDefs {
 	private HttpResponse response;
 
 	private String testRepoDesc = "test-repo-one user by Cucumber JVM";
+    private String user = "test@user.com";
+    private String password = "password";
 
-	@Given("^bubobubo and sparqlr are running$")
+    @Given("^bubobubo and sparqlr are running$")
 	public void bubobubo_and_sparqlr_are_running() throws Throwable {
 
 		response = HttpUtils.httpGet(bubobuboUrl + "/protocol", new ArrayList<RequestAttribute>());
@@ -116,9 +119,9 @@ public class BuboStepDefs {
 		params.put("company", "Sparqlr");
 		params.put("lastName", "ivie");
 		params.put("firstName", "charlie");
-		params.put("email", "test@user.com");
-		params.put("user.password", "password");
-		params.put("user.passwordConfirm", "password");
+        params.put("email", user);
+        params.put("user.password", password);
+		params.put("user.passwordConfirm", password);
 
 		// create user and repo
 		response = HttpUtils.httpPost(sparqlrUrl + "/account", params, headers);
@@ -197,4 +200,31 @@ public class BuboStepDefs {
         response = HttpUtils.httpDelete(urlWithCredentials);
     }
 
+    @When("^I get \"([^\"]*)\" as user with$")
+    public void I_get_as_user_with(String path, List<RequestAttribute> params) throws Throwable {
+        String urlWithCredentials = bubobuboUrl.replace("http://", "http://" + user + ":" + password + "@") + path;
+        response = HttpUtils.httpGet(urlWithCredentials, params);
+    }
+
+    @And("^I create test repo (\\d+)$")
+    public void I_create_test_repo(int repoNumber) throws Throwable {
+        // Express the Regexp above with the code you wish you had
+
+        Map<String, Object> params = new HashMap<String, Object>();
+        Map<String, String> headers = new HashMap<String, String>();
+
+        params.put("name", testRepo+repoNumber);
+        params.put("description", testRepoDesc+repoNumber);
+        params.put("password", testRepoPass+repoNumber);
+
+        response = HttpUtils.httpPost(sparqlrUrl + "/repositories/repository", params, headers);
+        assertEquals(200, response.getStatusLine().getStatusCode());
+    }
+
+    @When("^I get \"([^\"]*)\" as repo (\\d+) with$")
+    public void I_get_as_repo_with(String path, int repoNumber, List<RequestAttribute> params) throws Throwable {
+        // Express the Regexp above with the code you wish you had
+    String urlWithCredentials = bubobuboUrl.replace("http://", "http://" + testRepo+repoNumber + ":" + testRepoPass +repoNumber+ "@") + path;
+    response = HttpUtils.httpGet(urlWithCredentials, params);
+    }
 }

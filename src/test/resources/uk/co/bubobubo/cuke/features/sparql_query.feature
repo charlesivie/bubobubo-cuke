@@ -5,15 +5,6 @@ Feature: query for sparql responses
     And I delete the test user and repo
     And I end the http session
 
-  Scenario: perform unauthorised get request
-    Given I start the http session
-    And I create the test user and repo
-    And I end the http session
-    When I get "/repositories/test-repo-1" as unauthorised with
-      | type      | name  | value                       |
-      | parameter | query | select * where { ?s ?p ?o } |
-    Then I should get a 401 response code
-
   Scenario: signup create repo and query through rest
     Given I start the http session
     And I create the test user and repo
