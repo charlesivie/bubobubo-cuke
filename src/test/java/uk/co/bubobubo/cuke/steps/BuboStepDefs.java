@@ -4,9 +4,10 @@ import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import cucumber.runtime.PendingException;
 import org.apache.commons.io.FileUtils;
 import org.apache.http.HttpResponse;
+import org.apache.http.auth.Credentials;
+import org.apache.http.auth.UsernamePasswordCredentials;
 import org.custommonkey.xmlunit.XMLUnit;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.ClassPathResource;
@@ -202,8 +203,10 @@ public class BuboStepDefs {
 
     @When("^I get \"([^\"]*)\" as user with$")
     public void I_get_as_user_with(String path, List<RequestAttribute> params) throws Throwable {
-        String urlWithCredentials = bubobuboUrl.replace("http://", "http://" + user + ":" + password + "@") + path;
-        response = HttpUtils.httpGet(urlWithCredentials, params);
+		Credentials defaultcreds = new UsernamePasswordCredentials(user, password);
+
+        String url = bubobuboUrl + path;
+        response = HttpUtils.httpGet(url, defaultcreds, params);
     }
 
     @And("^I create test repo (\\d+)$")
