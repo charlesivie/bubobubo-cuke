@@ -1,7 +1,8 @@
 Feature: query for serql responses
 
   Background: setup
-	Given bubobubo and sparqlr are running
+    Given bubobubo is running
+    And sparqlr is running
 	And I delete the test user and repo
 	And I end the http session
 
