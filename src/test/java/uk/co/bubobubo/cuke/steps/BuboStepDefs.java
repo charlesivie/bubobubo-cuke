@@ -44,6 +44,20 @@ public class BuboStepDefs {
 
 	}
 
+    @Given("^bubobubo is running$")
+    public void bubobubo_is_running() throws Throwable {
+
+        response = HttpUtils.httpGet(bubobuboUrl + "/protocol", new ArrayList<RequestAttribute>());
+        assertEquals(200, response.getStatusLine().getStatusCode());
+    }
+
+    @Given("^sparqlr is running$")
+    public void sparqlr_is_running() throws Throwable {
+
+        response = HttpUtils.httpGet(sparqlrUrl, new ArrayList<RequestAttribute>());
+        assertEquals(200, response.getStatusLine().getStatusCode());
+    }
+
     @When("^I get \"([^\"]*)\"$")
     public void I_get(String path) throws Throwable {
         String urlWithCredentials = bubobuboUrl.replace("http://", "http://" + testRepo + ":" + testRepoPass + "@") + path;
