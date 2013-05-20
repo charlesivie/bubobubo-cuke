@@ -5,6 +5,7 @@ Feature: Contexts endpoint
 	And I delete the test user and repo
 	And I end the http session
 
+    @Wip
   Scenario: Get a list of contexts
 	Given I start the http session
 	And I create the test user and repo
