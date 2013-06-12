@@ -1,5 +1,6 @@
 package uk.co.bubobubo.cuke.steps;
 
+import cucumber.api.DataTable;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -19,6 +20,7 @@ import java.util.*;
 
 import static org.custommonkey.xmlunit.XMLAssert.assertXMLEqual;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class BuboStepDefs {
 
@@ -56,6 +58,17 @@ public class BuboStepDefs {
 
         response = HttpUtils.httpGet(sparqlrUrl, new ArrayList<RequestAttribute>());
         assertEquals(200, response.getStatusLine().getStatusCode());
+    }
+
+    @When("^I post the following form parameters to \"([^\"]*)\":$")
+    public void I_post_the_following_form_parameters_to_(String path, DataTable parameters) throws Throwable {
+
+        List<Map<String, String>> rawData = parameters.asMaps();
+        Map<String, Object> parameterMap = new HashMap<String, Object>();
+        for(Map<String, String> kvp : rawData) {
+            parameterMap.put(kvp.get("name"), kvp.get("value"));
+        }
+        response = HttpUtils.httpPost(sparqlrUrl + path, parameterMap, new HashMap<String, String>());
     }
 
     @When("^I get \"([^\"]*)\"$")
@@ -194,6 +207,12 @@ public class BuboStepDefs {
 
 	}
 
+    @Then("^the response body should contain the string \"([^\"]*)\"$")
+    public void the_response_body_should_contain_the_string(String testString) throws Throwable {
+
+        assertTrue(HttpUtils.responseAsString.contains(testString));
+    }
+
 
 	private static String bubobuboUrl;
 
@@ -241,7 +260,7 @@ public class BuboStepDefs {
     @When("^I get \"([^\"]*)\" as repo (\\d+) with$")
     public void I_get_as_repo_with(String path, int repoNumber, List<RequestAttribute> params) throws Throwable {
         // Express the Regexp above with the code you wish you had
-    String urlWithCredentials = bubobuboUrl.replace("http://", "http://" + testRepo+repoNumber + ":" + testRepoPass +repoNumber+ "@") + path;
-    response = HttpUtils.httpGet(urlWithCredentials, params);
+        String urlWithCredentials = bubobuboUrl.replace("http://", "http://" + testRepo+repoNumber + ":" + testRepoPass +repoNumber+ "@") + path;
+        response = HttpUtils.httpGet(urlWithCredentials, params);
     }
 }
