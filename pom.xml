@@ -10,6 +10,12 @@
     <packaging>jar</packaging>
     <name>Cucumber JVM for bubobubo</name>
 
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <openrdf.groupid>org.openrdf.sesame</openrdf.groupid>
+        <openrdf.version>2.7.2</openrdf.version>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>info.cukes</groupId>
@@ -90,17 +96,105 @@
             <version>3.2.1.RELEASE</version>
         </dependency>
 
-
         <dependency>
             <groupId>commons-io</groupId>
             <artifactId>commons-io</artifactId>
             <version>2.4</version>
         </dependency>
+
+        <!-- sesame -->
+        <dependency>
+            <groupId>${openrdf.groupid}</groupId>
+            <artifactId>sesame-core</artifactId>
+            <version>${openrdf.version}</version>
+            <type>pom</type>
+        </dependency>
+        <dependency>
+            <groupId>${openrdf.groupid}</groupId>
+            <artifactId>sesame-sail</artifactId>
+            <version>${openrdf.version}</version>
+            <type>pom</type>
+        </dependency>
+        <dependency>
+            <groupId>${openrdf.groupid}</groupId>
+            <artifactId>sesame-sail-nativerdf</artifactId>
+            <version>${openrdf.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>${openrdf.groupid}</groupId>
+            <artifactId>sesame-http</artifactId>
+            <version>${openrdf.version}</version>
+            <type>pom</type>
+        </dependency>
+        <dependency>
+            <groupId>${openrdf.groupid}</groupId>
+            <artifactId>sesame-repository-manager</artifactId>
+            <version>${openrdf.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>${openrdf.groupid}</groupId>
+            <artifactId>sesame-queryparser-sparql</artifactId>
+            <version>${openrdf.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>${openrdf.groupid}</groupId>
+            <artifactId>sesame-queryparser-serql</artifactId>
+            <version>${openrdf.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>${openrdf.groupid}</groupId>
+            <artifactId>sesame-queryresultio-sparqljson</artifactId>
+            <version>${openrdf.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>${openrdf.groupid}</groupId>
+            <artifactId>sesame-queryresultio-api</artifactId>
+            <version>${openrdf.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>${openrdf.groupid}</groupId>
+            <artifactId>sesame-queryresultio-text</artifactId>
+            <version>${openrdf.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>${openrdf.groupid}</groupId>
+            <artifactId>sesame-rio-ntriples</artifactId>
+            <version>${openrdf.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>${openrdf.groupid}</groupId>
+            <artifactId>sesame-rio-turtle</artifactId>
+            <version>${openrdf.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>${openrdf.groupid}</groupId>
+            <artifactId>sesame-rio-rdfxml</artifactId>
+            <version>${openrdf.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>${openrdf.groupid}</groupId>
+            <artifactId>sesame-rio-n3</artifactId>
+            <version>${openrdf.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>${openrdf.groupid}</groupId>
+            <artifactId>sesame-rio-binary</artifactId>
+            <version>${openrdf.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>${openrdf.groupid}</groupId>
+            <artifactId>sesame-rio-compliance</artifactId>
+            <version>${openrdf.version}</version>
+        </dependency>
+
     </dependencies>
 
     <build>
 
-        <finalName>trilobite</finalName>
+        <finalName>bubobubo-cukes</finalName>
 
         <pluginManagement>
             <plugins>
