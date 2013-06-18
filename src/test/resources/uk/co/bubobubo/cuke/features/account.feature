@@ -1,4 +1,3 @@
-@Wip
 Feature: Account screen operations
 
   Scenario: Username/email address should be unique
