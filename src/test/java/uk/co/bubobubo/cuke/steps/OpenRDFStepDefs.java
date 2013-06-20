@@ -6,12 +6,12 @@ import org.openrdf.query.resultio.TupleQueryResultFormat;
 import org.openrdf.query.resultio.TupleQueryResultWriter;
 import org.openrdf.query.resultio.TupleQueryResultWriterRegistry;
 import org.openrdf.repository.RepositoryConnection;
-import org.openrdf.repository.RepositoryException;
 import org.openrdf.repository.http.HTTPGraphQuery;
 import org.openrdf.repository.http.HTTPRepository;
 import org.openrdf.repository.http.HTTPTupleQuery;
 import org.openrdf.rio.RDFFormat;
 import org.openrdf.rio.RDFHandler;
+import org.openrdf.rio.RDFHandlerException;
 import org.openrdf.rio.RDFWriterRegistry;
 import uk.co.bubobubo.cuke.bean.RequestAttribute;
 
@@ -21,9 +21,9 @@ import java.util.List;
 
 public class OpenRDFStepDefs {
 
-	private String repositoryBaseUri;
-	private String username;
-	private String password;
+	private String repositoryBaseUri = "http://localhost:8080/openrdf-sesame/";
+	private String username = "test@user.com";
+	private String password = "password";
 
 	private boolean askResult;
 	private QueryResult queryResult;
@@ -89,12 +89,12 @@ public class OpenRDFStepDefs {
 		HTTPGraphQuery graphQuery =
 				(HTTPGraphQuery)connection.prepareGraphQuery(QueryLanguage.SPARQL, query);
 
-		// Somewhere to collect the output
-		StringWriter writer = new StringWriter();
-
 		if(accept == null) {
 			queryResult = graphQuery.evaluate();
 		} else {
+            // Somewhere to collect the output
+            StringWriter writer = new StringWriter();
+
 			// Prepare a writer to produce a single String of results
 			RDFHandler rdfHandler = RDFWriterRegistry.getInstance()
 				.get(RDFFormat.TURTLE)      // output in Turtle
@@ -107,14 +107,63 @@ public class OpenRDFStepDefs {
 
 	}
 
-	private void doInSesame(String repositoryId, List<RequestAttribute> params, Class<? extends Query> queryType) throws Throwable {
+    Query prepareQuery(Class<? extends Query> queryType,
+        RepositoryConnection connection,
+        QueryLanguage queryLanguage,
+        String query) {
+
+        return null;
+    }
+
+    private QueryResult prepareQuery(RepositoryConnection connection, String query) {
+        return prepareQuery(connection, QueryLanguage.SPARQL, query);
+    }
+
+    private QueryResult prepareQuery(RepositoryConnection connection, QueryLanguage queryLanguage, String query) {
+        return null;
+    }
+
+    private String queryResultAsString(Class<? extends Query> queryType, Query query)
+            throws QueryEvaluationException, RDFHandlerException, TupleQueryResultHandlerException {
+
+
+        if(queryType.isInstance(GraphQuery.class)) {
+            // Somewhere to collect the output
+            StringWriter writer = new StringWriter();
+
+            // Prepare a writer to produce a single String of results
+            RDFHandler rdfHandler = RDFWriterRegistry.getInstance()
+                .get(RDFFormat.TURTLE)      // output in Turtle
+                .getWriter(writer);         // dump output to writer
+
+            // run the query
+            ((GraphQuery)query).evaluate(rdfHandler);
+            return writer.toString();
+        } else if(queryType.isInstance(TupleQuery.class)) {
+
+            // Somewhere to collect the output
+            ByteArrayOutputStream baos = new ByteArrayOutputStream();
+            // Prepare a writer to produce a single String of results
+            TupleQueryResultWriter tupleQueryResultWriter =
+                    TupleQueryResultWriterRegistry.getInstance()
+                            .get(TupleQueryResultFormat.JSON)   //   Write results as JSON
+                            .getWriter(baos);                   //   Dump results to outputStream
+            // run the query
+            ((TupleQuery)query).evaluate(tupleQueryResultWriter);
+            return baos.toString();
+        }
+        return null;
+    }
+
+	private void doInSesame(String repositoryId, List<RequestAttribute> params, Class<? extends Query> queryType)
+            throws Throwable {
 
 		String query = getParameter("query", params);
 		String accept = getHeader("accept", params);
 
 		RepositoryConnection connection = connect(repositoryId);
 
-		// query = prepareQuery(connection, queryLanguage, query);
+		// query = prepareQuery(queryType, connection, queryLanguage, query);
 
 		if(accept == null) {
 			// use default format
