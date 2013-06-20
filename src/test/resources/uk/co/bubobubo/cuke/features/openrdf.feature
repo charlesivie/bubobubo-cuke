@@ -9,7 +9,7 @@ Feature: query using open-rdf api
   Scenario: signup create repo and query through rest
 	Given I start the http session
 	And I create the test user and repo
-	When I get using open-rdf libs "/repositories/test-repo-1" with
+	When I use open-rdf libs to SELECT from "test-repo-1" with the parameters
 	  | type      | name   | value                                     |
 	  | parameter | query  | select * where { ?s ?p ?o }               |
 	  | header    | Accept | application/sparql-results+xml, */*;q=0.5 |
@@ -18,7 +18,7 @@ Feature: query using open-rdf api
   Scenario: signup create repo and query through rest without accept header
 	Given I start the http session
 	And I create the test user and repo
-	When I get using open-rdf libs "/repositories/test-repo-1" with
+    When I use open-rdf libs to SELECT from "test-repo-1" with the parameters
 	  | type      | name  | value                       |
 	  | parameter | query | select * where { ?s ?p ?o } |
 	Then I should get a 200 response code
@@ -26,7 +26,7 @@ Feature: query using open-rdf api
   Scenario: signup create repo and perform ask query
 	Given I start the http session
 	And I create the test user and repo
-	When I get using open-rdf libs "/repositories/test-repo-1" with
+    When I use open-rdf libs to ASK from "test-repo-1" with the parameters
 	  | type      | name   | value                   |
 	  | parameter | query  | ask { ?s ?p ?o }        |
 	  | header    | Accept | text/boolean, */*;q=0.5 |
@@ -35,7 +35,7 @@ Feature: query using open-rdf api
   Scenario: signup create repo and perform construct sparql query
 	Given I start the http session
 	And I create the test user and repo
-	When I post using open-rdf libs to "/repositories/test-repo-1" with
+    When I use open-rdf libs to CONSTRUCT from "test-repo-1" with the parameters
 	  | type      | name         | value                                 |
 	  | parameter | query        | construct {?s ?p ?o} where {?s ?p ?o} |
 	  | header    | accept       | application/rdf+xml, */*;q=0.5        |
