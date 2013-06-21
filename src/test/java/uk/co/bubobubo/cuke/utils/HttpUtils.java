@@ -182,6 +182,10 @@ public class HttpUtils {
 
 	}
 
+	public static HttpResponse httpPut(String relativeUri) throws IOException {
+		return httpPut(relativeUri, Collections.<String, Object>emptyMap());
+	}
+
 	public static HttpResponse httpPut(String relativeUri, Map<String, Object> parameters) throws IOException {
 		return httpPut(relativeUri, parameters, Collections.<String, String>emptyMap());
 	}

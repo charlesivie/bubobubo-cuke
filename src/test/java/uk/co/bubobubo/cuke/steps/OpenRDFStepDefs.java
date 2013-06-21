@@ -1,5 +1,6 @@
 package uk.co.bubobubo.cuke.steps;
 
+import cucumber.api.java.en.And;
 import cucumber.api.java.en.When;
 import org.openrdf.query.*;
 import org.openrdf.query.resultio.TupleQueryResultFormat;
@@ -19,6 +20,8 @@ import java.io.ByteArrayOutputStream;
 import java.io.StringWriter;
 import java.util.List;
 
+import static junit.framework.Assert.assertEquals;
+
 public class OpenRDFStepDefs {
 
 	private String repositoryBaseUri = "http://localhost:8080/openrdf-sesame/";
@@ -28,6 +31,13 @@ public class OpenRDFStepDefs {
 	private boolean askResult;
 	private QueryResult queryResult;
 	private String resultAsString;
+
+
+	@And("^the number of explicit triples in from \"([^\"]*)\" is (\\d+)$")
+	public void the_number_of_explicit_triples_in_from_is(String repositoryId, int count) throws Throwable {
+		RepositoryConnection connection = connect(repositoryId);
+		assertEquals(count, connection.size());
+	}
 
 	@When("^I use open-rdf libs to SELECT from \"([^\"]*)\" with the parameters$")
 	public void I_use_open_rdf_libs_to_SELECT_from_with_the_parameters(String repositoryId, List<RequestAttribute> params)
@@ -200,6 +210,7 @@ public class OpenRDFStepDefs {
 		return null;
 	}
 
+
 	public void setRepositoryBaseUri(String repositoryBaseUri) {
 		this.repositoryBaseUri = repositoryBaseUri;
 	}
@@ -211,4 +222,5 @@ public class OpenRDFStepDefs {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+
 }

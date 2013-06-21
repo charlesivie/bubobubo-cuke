@@ -1,0 +1,1204 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:cd="http://www.recshop.fake/cd#">
+    <rdf:Description rdf:about="http://www.recshop.fake/cd/XKJ02GLM8UJ">
+        <cd:artist>Nehru Barker</cd:artist>
+        <cd:country>Jamaica</cd:country>
+        <cd:company>Semper Foundation</cd:company>
+        <cd:price>17</cd:price>
+        <cd:year>2013</cd:year>
+        <cd:sku>B46D6815-861E-1153-00D0-F35F-89607252</cd:sku>
+        <cd:length>5</cd:length>
+        <cd:tracks>16</cd:tracks>
+        <cd:style>sed tortor. Integer</cd:style>
+        <cd:genre>et malesuada</cd:genre>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.recshop.fake/cd/KBV41RLB9VA">
+        <cd:artist>Dexter Booth</cd:artist>
+        <cd:country>Cook Islands</cd:country>
+        <cd:company>Est Ac Mattis Incorporated</cd:company>
+        <cd:price>17</cd:price>
+        <cd:year>1988</cd:year>
+        <cd:sku>6767E9C1-091D-D21A-A564-C713-9CAAA7A1</cd:sku>
+        <cd:length>10</cd:length>
+        <cd:tracks>1</cd:tracks>
+        <cd:style>Cras eget nisi</cd:style>
+        <cd:genre>lorem ut</cd:genre>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.recshop.fake/cd/EPL89VDT3FZ">
+        <cd:artist>Leonard Golden</cd:artist>
+        <cd:country>Turks and Caicos Islands</cd:country>
+        <cd:company>Accumsan Neque Company</cd:company>
+        <cd:price>15</cd:price>
+        <cd:year>1998</cd:year>
+        <cd:sku>EFA8A12C-035E-DAC7-9D05-09CD-9AF5F34D</cd:sku>
+        <cd:length>2</cd:length>
+        <cd:tracks>20</cd:tracks>
+        <cd:style>est. Mauris eu</cd:style>
+        <cd:genre>ac turpis</cd:genre>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.recshop.fake/cd/QVE26EOQ7JM">
+        <cd:artist>August Mayer</cd:artist>
+        <cd:country>Netherlands</cd:country>
+        <cd:company>Ultricies Consulting</cd:company>
+        <cd:price>10</cd:price>
+        <cd:year>1992</cd:year>
+        <cd:sku>5F7BFB0C-EF3C-0C62-9523-FF62-98B351BB</cd:sku>
+        <cd:length>1</cd:length>
+        <cd:tracks>5</cd:tracks>
+        <cd:style>est. Mauris eu</cd:style>
+        <cd:genre>pulvinar arcu</cd:genre>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.recshop.fake/cd/VZO33SQH6AM">
+        <cd:artist>Victor Hays</cd:artist>
+        <cd:country>Svalbard and Jan Mayen</cd:country>
+        <cd:company>Aliquet Diam Sed Company</cd:company>
+        <cd:price>16</cd:price>
+        <cd:year>1975</cd:year>
+        <cd:sku>4938E539-6707-6644-C5E2-2DB9-373823F7</cd:sku>
+        <cd:length>9</cd:length>
+        <cd:tracks>4</cd:tracks>
+        <cd:style>ut, pharetra sed,</cd:style>
+        <cd:genre>interdum feugiat.</cd:genre>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.recshop.fake/cd/VSJ50GUG1NV">
+        <cd:artist>Jasper Cross</cd:artist>
+        <cd:country>Heard Island and Mcdonald Islands</cd:country>
+        <cd:company>Auctor Velit Aliquam LLP</cd:company>
+        <cd:price>14</cd:price>
+        <cd:year>1956</cd:year>
+        <cd:sku>5F0D24C9-108E-8B47-6AD8-78E1-92DD46A9</cd:sku>
+        <cd:length>4</cd:length>
+        <cd:tracks>14</cd:tracks>
+        <cd:style>tellus eu augue</cd:style>
+        <cd:genre>tellus. Aenean</cd:genre>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.recshop.fake/cd/IFF78BIJ5FL">
+        <cd:artist>Victor Duran</cd:artist>
+        <cd:country>Austria</cd:country>
+        <cd:company>Sociosqu Limited</cd:company>
+        <cd:price>20</cd:price>
+        <cd:year>1999</cd:year>
+        <cd:sku>264FAA94-04C8-3094-4230-8644-459AED11</cd:sku>
+        <cd:length>3</cd:length>
+        <cd:tracks>9</cd:tracks>
+        <cd:style>Fusce aliquet magna</cd:style>
+        <cd:genre>lectus sit</cd:genre>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.recshop.fake/cd/ZFM23RIW1PD">
+        <cd:artist>Barrett Olson</cd:artist>
+        <cd:country>Congo</cd:country>
+        <cd:company>Et Consulting</cd:company>
+        <cd:price>17</cd:price>
+        <cd:year>1961</cd:year>
+        <cd:sku>6FB1D82F-C90A-ABDC-AD6D-DA51-006E2008</cd:sku>
+        <cd:length>10</cd:length>
+        <cd:tracks>16</cd:tracks>
+        <cd:style>eget tincidunt dui</cd:style>
+        <cd:genre>ipsum porta</cd:genre>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.recshop.fake/cd/MQW14IAH9JK">
+        <cd:artist>Emery Ryan</cd:artist>
+        <cd:country>Sao Tome and Principe</cd:country>
+        <cd:company>Augue Institute</cd:company>
+        <cd:price>18</cd:price>
+        <cd:year>1955</cd:year>
+        <cd:sku>F5CE7DE0-CBA9-0762-D2EE-A8CD-02E413B1</cd:sku>
+        <cd:length>6</cd:length>
+        <cd:tracks>10</cd:tracks>
+        <cd:style>a, arcu. Sed</cd:style>
+        <cd:genre>fames ac</cd:genre>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.recshop.fake/cd/FCU03SZZ2UV">
+        <cd:artist>Edan Terry</cd:artist>
+        <cd:country>Benin</cd:country>
+        <cd:company>Justo Institute</cd:company>
+        <cd:price>17</cd:price>
+        <cd:year>1991</cd:year>
+        <cd:sku>4EB80F41-8B09-1FA2-96E3-900A-4BA4F723</cd:sku>
+        <cd:length>4</cd:length>
+        <cd:tracks>17</cd:tracks>
+        <cd:style>a, magna. Lorem</cd:style>
+        <cd:genre>tincidunt, neque</cd:genre>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.recshop.fake/cd/NPA00XIQ9IH">
+        <cd:artist>Quinn Banks</cd:artist>
+        <cd:country>Libyan Arab Jamahiriya</cd:country>
+        <cd:company>Amet Limited</cd:company>
+        <cd:price>19</cd:price>
+        <cd:year>2004</cd:year>
+        <cd:sku>30F806A3-C803-41B9-D48B-C1BD-1A2B980C</cd:sku>
+        <cd:length>6</cd:length>
+        <cd:tracks>20</cd:tracks>
+        <cd:style>et, lacinia vitae,</cd:style>
+        <cd:genre>non justo.</cd:genre>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.recshop.fake/cd/YCL83YME0FA">
+        <cd:artist>George Alvarez</cd:artist>
+        <cd:country>Sweden</cd:country>
+        <cd:company>Vulputate Industries</cd:company>
+        <cd:price>14</cd:price>
+        <cd:year>2003</cd:year>
+        <cd:sku>2D3D6BD3-5D9E-39C6-2ADF-9F66-56E76278</cd:sku>
+        <cd:length>1</cd:length>
+        <cd:tracks>15</cd:tracks>
+        <cd:style>justo faucibus lectus,</cd:style>
+        <cd:genre>orci, in</cd:genre>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.recshop.fake/cd/WMU91QYT5JE">
+        <cd:artist>Hector English</cd:artist>
+        <cd:country>Pakistan</cd:country>
+        <cd:company>Cras Pellentesque Sed Inc.</cd:company>
+        <cd:price>17</cd:price>
+        <cd:year>1972</cd:year>
+        <cd:sku>EC1523DB-392A-065C-897E-7EA7-146DDCFB</cd:sku>
+        <cd:length>6</cd:length>
+        <cd:tracks>2</cd:tracks>
+        <cd:style>est, mollis non,</cd:style>
+        <cd:genre>orci luctus</cd:genre>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.recshop.fake/cd/AOI51ULQ7CB">
+        <cd:artist>Eaton White</cd:artist>
+        <cd:country>Korea, Republic of</cd:country>
+        <cd:company>Nibh Vulputate PC</cd:company>
+        <cd:price>12</cd:price>
+        <cd:year>1985</cd:year>
+        <cd:sku>C679349F-DA18-F008-9AC2-A573-84A2FB3C</cd:sku>
+        <cd:length>2</cd:length>
+        <cd:tracks>14</cd:tracks>
+        <cd:style>nisi. Mauris nulla.</cd:style>
+        <cd:genre>Integer urna.</cd:genre>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.recshop.fake/cd/NIE19YGQ2SV">
+        <cd:artist>Warren Whitfield</cd:artist>
+        <cd:country>Guatemala</cd:country>
+        <cd:company>Iaculis Quis Pede LLP</cd:company>
+        <cd:price>13</cd:price>
+        <cd:year>1990</cd:year>
+        <cd:sku>CF7EF31B-5C1B-C118-B8D5-1282-276BB297</cd:sku>
+        <cd:length>2</cd:length>
+        <cd:tracks>2</cd:tracks>
+        <cd:style>velit. Sed malesuada</cd:style>
+        <cd:genre>Integer tincidunt</cd:genre>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.recshop.fake/cd/ZMO60KAC5NH">
+        <cd:artist>Dolan Kirby</cd:artist>
+        <cd:country>Slovenia</cd:country>
+        <cd:company>Iaculis Enim Industries</cd:company>
+        <cd:price>14</cd:price>
+        <cd:year>1952</cd:year>
+        <cd:sku>BFB7BD03-F190-61D0-6C67-BE06-F6700F5B</cd:sku>
+        <cd:length>10</cd:length>
+        <cd:tracks>2</cd:tracks>
+        <cd:style>gravida sagittis. Duis</cd:style>
+        <cd:genre>natoque penatibus</cd:genre>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.recshop.fake/cd/PTS05DLH0MS">
+        <cd:artist>Tiger Cohen</cd:artist>
+        <cd:country>Timor-leste</cd:country>
+        <cd:company>Morbi Vehicula Pellentesque Ltd</cd:company>
+        <cd:price>20</cd:price>
+        <cd:year>1992</cd:year>
+        <cd:sku>FE20E169-17CC-5FA3-322E-BE9C-6B3BBB6B</cd:sku>
+        <cd:length>6</cd:length>
+        <cd:tracks>11</cd:tracks>
+        <cd:style>Donec luctus aliquet</cd:style>
+        <cd:genre>amet, risus.</cd:genre>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.recshop.fake/cd/WDE12HAA1PU">
+        <cd:artist>Lucian Chang</cd:artist>
+        <cd:country>British Indian Ocean Territory</cd:country>
+        <cd:company>Donec Non Justo Industries</cd:company>
+        <cd:price>15</cd:price>
+        <cd:year>2011</cd:year>
+        <cd:sku>94F40ABC-438C-DBE9-5D14-A37C-7CC7F649</cd:sku>
+        <cd:length>8</cd:length>
+        <cd:tracks>6</cd:tracks>
+        <cd:style>amet metus. Aliquam</cd:style>
+        <cd:genre>nec metus</cd:genre>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.recshop.fake/cd/VXF17HMK5YE">
+        <cd:artist>Uriel Marquez</cd:artist>
+        <cd:country>Martinique</cd:country>
+        <cd:company>A Corp.</cd:company>
+        <cd:price>20</cd:price>
+        <cd:year>1991</cd:year>
+        <cd:sku>FBF7A6C3-101D-FA62-6821-5048-B9021E51</cd:sku>
+        <cd:length>7</cd:length>
+        <cd:tracks>7</cd:tracks>
+        <cd:style>sapien, cursus in,</cd:style>
+        <cd:genre>Donec egestas.</cd:genre>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.recshop.fake/cd/GCL66PTZ6BN">
+        <cd:artist>Nehru Gill</cd:artist>
+        <cd:country>Liberia</cd:country>
+        <cd:company>Lacus Aliquam Rutrum Limited</cd:company>
+        <cd:price>17</cd:price>
+        <cd:year>1968</cd:year>
+        <cd:sku>5A87C7DD-1275-DCDA-2756-A6D5-071F0286</cd:sku>
+        <cd:length>8</cd:length>
+        <cd:tracks>1</cd:tracks>
+        <cd:style>amet luctus vulputate,</cd:style>
+        <cd:genre>mattis. Cras</cd:genre>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.recshop.fake/cd/QVJ72SFY1CH">
+        <cd:artist>Jakeem Phillips</cd:artist>
+        <cd:country>Indonesia</cd:country>
+        <cd:company>Volutpat Nunc Associates</cd:company>
+        <cd:price>20</cd:price>
+        <cd:year>1996</cd:year>
+        <cd:sku>286298A0-5AED-2A4C-72B3-C899-C4CB6D08</cd:sku>
+        <cd:length>4</cd:length>
+        <cd:tracks>9</cd:tracks>
+        <cd:style>Donec dignissim magna</cd:style>
+        <cd:genre>tellus, imperdiet</cd:genre>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.recshop.fake/cd/NKZ05SFI2VX">
+        <cd:artist>Vance Garrison</cd:artist>
+        <cd:country>Wallis and Futuna</cd:country>
+        <cd:company>Lacus Industries</cd:company>
+        <cd:price>11</cd:price>
+        <cd:year>1962</cd:year>
+        <cd:sku>02BC98C1-F3CE-22E6-2C85-4F54-708D45C5</cd:sku>
+        <cd:length>6</cd:length>
+        <cd:tracks>9</cd:tracks>
+        <cd:style>non, cursus non,</cd:style>
+        <cd:genre>ultrices iaculis</cd:genre>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.recshop.fake/cd/DUS35GRW1ZE">
+        <cd:artist>Abbot Valenzuela</cd:artist>
+        <cd:country>Congo</cd:country>
+        <cd:company>Donec Est Mauris Company</cd:company>
+        <cd:price>19</cd:price>
+        <cd:year>1969</cd:year>
+        <cd:sku>A0B8414A-9BBA-BADA-CE81-04C5-D00B3FEE</cd:sku>
+        <cd:length>1</cd:length>
+        <cd:tracks>12</cd:tracks>
+        <cd:style>est. Nunc laoreet</cd:style>
+        <cd:genre>rhoncus. Nullam</cd:genre>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.recshop.fake/cd/JTV16JHR6CZ">
+        <cd:artist>Logan Pace</cd:artist>
+        <cd:country>Virgin Islands, U.S.</cd:country>
+        <cd:company>In Foundation</cd:company>
+        <cd:price>19</cd:price>
+        <cd:year>1959</cd:year>
+        <cd:sku>82035F24-0BB5-5658-C16F-72C9-C1E7CF74</cd:sku>
+        <cd:length>2</cd:length>
+        <cd:tracks>10</cd:tracks>
+        <cd:style>Curabitur egestas nunc</cd:style>
+        <cd:genre>convallis, ante</cd:genre>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.recshop.fake/cd/UEG62SOS8II">
+        <cd:artist>Herrod Norris</cd:artist>
+        <cd:country>Qatar</cd:country>
+        <cd:company>Dapibus Ligula LLP</cd:company>
+        <cd:price>19</cd:price>
+        <cd:year>1995</cd:year>
+        <cd:sku>A6323397-400C-7B7F-1EDC-B015-4CDFA245</cd:sku>
+        <cd:length>7</cd:length>
+        <cd:tracks>11</cd:tracks>
+        <cd:style>porttitor interdum. Sed</cd:style>
+        <cd:genre>elit fermentum</cd:genre>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.recshop.fake/cd/BFO11JZV3BD">
+        <cd:artist>Moses Barnett</cd:artist>
+        <cd:country>French Guiana</cd:country>
+        <cd:company>Tincidunt Aliquam Arcu LLC</cd:company>
+        <cd:price>18</cd:price>
+        <cd:year>1986</cd:year>
+        <cd:sku>AD0A73EC-C739-24E1-54DF-5177-3E70472F</cd:sku>
+        <cd:length>4</cd:length>
+        <cd:tracks>3</cd:tracks>
+        <cd:style>Etiam imperdiet dictum</cd:style>
+        <cd:genre>luctus aliquet</cd:genre>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.recshop.fake/cd/CQF49BKF1XS">
+        <cd:artist>Elvis Leach</cd:artist>
+        <cd:country>Mayotte</cd:country>
+        <cd:company>Libero Associates</cd:company>
+        <cd:price>18</cd:price>
+        <cd:year>1956</cd:year>
+        <cd:sku>5C251A70-EA9B-F241-11D3-376A-6719A05F</cd:sku>
+        <cd:length>9</cd:length>
+        <cd:tracks>10</cd:tracks>
+        <cd:style>Proin vel arcu</cd:style>
+        <cd:genre>tincidunt nibh.</cd:genre>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.recshop.fake/cd/RZM70IZG8KY">
+        <cd:artist>Baxter Saunders</cd:artist>
+        <cd:country>Tonga</cd:country>
+        <cd:company>Luctus Ltd</cd:company>
+        <cd:price>17</cd:price>
+        <cd:year>1975</cd:year>
+        <cd:sku>3E0D8028-D9DB-BA9B-2168-C608-758C2EB5</cd:sku>
+        <cd:length>9</cd:length>
+        <cd:tracks>14</cd:tracks>
+        <cd:style>Mauris blandit enim</cd:style>
+        <cd:genre>viverra. Maecenas</cd:genre>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.recshop.fake/cd/LVI59TCR1DF">
+        <cd:artist>Nero Francis</cd:artist>
+        <cd:country>Togo</cd:country>
+        <cd:company>Vestibulum Accumsan Institute</cd:company>
+        <cd:price>12</cd:price>
+        <cd:year>1988</cd:year>
+        <cd:sku>A7B7AA2F-7D2D-87B1-574F-E147-019B4BFF</cd:sku>
+        <cd:length>3</cd:length>
+        <cd:tracks>14</cd:tracks>
+        <cd:style>Nullam feugiat placerat</cd:style>
+        <cd:genre>tincidunt nibh.</cd:genre>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.recshop.fake/cd/MJZ88GVU3DH">
+        <cd:artist>Ethan Lambert</cd:artist>
+        <cd:country>Taiwan, Province of China</cd:country>
+        <cd:company>Vitae Sodales At Company</cd:company>
+        <cd:price>17</cd:price>
+        <cd:year>2007</cd:year>
+        <cd:sku>63E17A06-DBCB-159E-AA88-2E8F-BCD82FC8</cd:sku>
+        <cd:length>3</cd:length>
+        <cd:tracks>14</cd:tracks>
+        <cd:style>non ante bibendum</cd:style>
+        <cd:genre>a tortor.</cd:genre>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.recshop.fake/cd/FNI81WLH7ZH">
+        <cd:artist>Driscoll Munoz</cd:artist>
+        <cd:country>Bhutan</cd:country>
+        <cd:company>Feugiat Industries</cd:company>
+        <cd:price>20</cd:price>
+        <cd:year>1979</cd:year>
+        <cd:sku>7B10D1C6-47FF-CA1F-0FD7-36D1-8B8D782F</cd:sku>
+        <cd:length>3</cd:length>
+        <cd:tracks>5</cd:tracks>
+        <cd:style>vel, mauris. Integer</cd:style>
+        <cd:genre>Proin eget</cd:genre>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.recshop.fake/cd/DRZ16VRX2MA">
+        <cd:artist>Elmo Reynolds</cd:artist>
+        <cd:country>Lesotho</cd:country>
+        <cd:company>Sit Amet Ltd</cd:company>
+        <cd:price>16</cd:price>
+        <cd:year>1951</cd:year>
+        <cd:sku>C28A91C9-5086-54EF-8688-838B-E55D9DD5</cd:sku>
+        <cd:length>1</cd:length>
+        <cd:tracks>9</cd:tracks>
+        <cd:style>lacus. Ut nec</cd:style>
+        <cd:genre>natoque penatibus</cd:genre>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.recshop.fake/cd/ADB55PCC8PV">
+        <cd:artist>Hyatt Rivas</cd:artist>
+        <cd:country>Cook Islands</cd:country>
+        <cd:company>Luctus Aliquet Odio Institute</cd:company>
+        <cd:price>12</cd:price>
+        <cd:year>1956</cd:year>
+        <cd:sku>CF29807E-0DEB-5AE1-7A58-A793-03420EED</cd:sku>
+        <cd:length>9</cd:length>
+        <cd:tracks>3</cd:tracks>
+        <cd:style>non, bibendum sed,</cd:style>
+        <cd:genre>ac risus.</cd:genre>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.recshop.fake/cd/VUE24NVC0KH">
+        <cd:artist>Bruce Stevenson</cd:artist>
+        <cd:country>Dominica</cd:country>
+        <cd:company>Curae; Corporation</cd:company>
+        <cd:price>19</cd:price>
+        <cd:year>1954</cd:year>
+        <cd:sku>0992A717-43EA-5CE8-7068-D3B2-A4FC4514</cd:sku>
+        <cd:length>10</cd:length>
+        <cd:tracks>14</cd:tracks>
+        <cd:style>Duis elementum, dui</cd:style>
+        <cd:genre>non massa</cd:genre>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.recshop.fake/cd/SAQ20BTY2MC">
+        <cd:artist>Buckminster Macdonald</cd:artist>
+        <cd:country>Bahrain</cd:country>
+        <cd:company>Sagittis Nullam Consulting</cd:company>
+        <cd:price>11</cd:price>
+        <cd:year>1956</cd:year>
+        <cd:sku>FC0B06C5-57CF-9500-1023-B3DE-4EA32242</cd:sku>
+        <cd:length>10</cd:length>
+        <cd:tracks>8</cd:tracks>
+        <cd:style>Pellentesque habitant morbi</cd:style>
+        <cd:genre>pede. Suspendisse</cd:genre>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.recshop.fake/cd/JES41WRW0MU">
+        <cd:artist>Patrick Michael</cd:artist>
+        <cd:country>Eritrea</cd:country>
+        <cd:company>Et Company</cd:company>
+        <cd:price>11</cd:price>
+        <cd:year>1991</cd:year>
+        <cd:sku>56789ADB-9388-F2C1-3D2E-359B-87567D2C</cd:sku>
+        <cd:length>3</cd:length>
+        <cd:tracks>14</cd:tracks>
+        <cd:style>velit dui, semper</cd:style>
+        <cd:genre>convallis ligula.</cd:genre>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.recshop.fake/cd/EFK40PIH9XZ">
+        <cd:artist>Driscoll Collier</cd:artist>
+        <cd:country>Korea, Republic of</cd:country>
+        <cd:company>Nam Porttitor Scelerisque Company</cd:company>
+        <cd:price>14</cd:price>
+        <cd:year>1971</cd:year>
+        <cd:sku>755DD20A-5AF2-F29D-994E-C753-8E8DE7C5</cd:sku>
+        <cd:length>8</cd:length>
+        <cd:tracks>3</cd:tracks>
+        <cd:style>quis turpis vitae</cd:style>
+        <cd:genre>dolor dolor,</cd:genre>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.recshop.fake/cd/LJQ09XYT3GZ">
+        <cd:artist>Davis Cervantes</cd:artist>
+        <cd:country>Falkland Islands (Malvinas)</cd:country>
+        <cd:company>Eu Sem Incorporated</cd:company>
+        <cd:price>18</cd:price>
+        <cd:year>2000</cd:year>
+        <cd:sku>E38B1F86-CA96-EBA8-8F45-6AF6-9D553A52</cd:sku>
+        <cd:length>9</cd:length>
+        <cd:tracks>18</cd:tracks>
+        <cd:style>volutpat nunc sit</cd:style>
+        <cd:genre>Quisque ornare</cd:genre>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.recshop.fake/cd/QRO16WNB5MM">
+        <cd:artist>Samson Hendrix</cd:artist>
+        <cd:country>Germany</cd:country>
+        <cd:company>Fames Ac Industries</cd:company>
+        <cd:price>20</cd:price>
+        <cd:year>2013</cd:year>
+        <cd:sku>15D787DA-4B83-8F82-0720-1D93-76C7E3F0</cd:sku>
+        <cd:length>6</cd:length>
+        <cd:tracks>17</cd:tracks>
+        <cd:style>id, blandit at,</cd:style>
+        <cd:genre>Nam interdum</cd:genre>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.recshop.fake/cd/GIT27WHV7WC">
+        <cd:artist>Dennis Gilliam</cd:artist>
+        <cd:country>Saint Pierre and Miquelon</cd:country>
+        <cd:company>Sed Sapien Incorporated</cd:company>
+        <cd:price>18</cd:price>
+        <cd:year>1987</cd:year>
+        <cd:sku>24DA30A4-97CA-B174-2C1C-0674-35901713</cd:sku>
+        <cd:length>8</cd:length>
+        <cd:tracks>20</cd:tracks>
+        <cd:style>Quisque libero lacus,</cd:style>
+        <cd:genre>Duis at</cd:genre>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.recshop.fake/cd/ETZ34CCN5PU">
+        <cd:artist>Acton Lawrence</cd:artist>
+        <cd:country>Ethiopia</cd:country>
+        <cd:company>Gravida Mauris Company</cd:company>
+        <cd:price>13</cd:price>
+        <cd:year>1994</cd:year>
+        <cd:sku>BF6B0ED4-AC2B-CAF6-A0B5-3758-E6A7E339</cd:sku>
+        <cd:length>2</cd:length>
+        <cd:tracks>14</cd:tracks>
+        <cd:style>montes, nascetur ridiculus</cd:style>
+        <cd:genre>auctor. Mauris</cd:genre>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.recshop.fake/cd/GXD99VGD2OR">
+        <cd:artist>Justin Chan</cd:artist>
+        <cd:country>Kazakhstan</cd:country>
+        <cd:company>Suspendisse Limited</cd:company>
+        <cd:price>20</cd:price>
+        <cd:year>1996</cd:year>
+        <cd:sku>3F4AE8E8-B8DE-1F55-FF3A-32C2-0A52EED1</cd:sku>
+        <cd:length>10</cd:length>
+        <cd:tracks>3</cd:tracks>
+        <cd:style>Nullam vitae diam.</cd:style>
+        <cd:genre>mattis. Integer</cd:genre>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.recshop.fake/cd/DRP06VTV9OZ">
+        <cd:artist>Maxwell Morin</cd:artist>
+        <cd:country>French Polynesia</cd:country>
+        <cd:company>Nec Malesuada Corporation</cd:company>
+        <cd:price>13</cd:price>
+        <cd:year>1967</cd:year>
+        <cd:sku>03532404-220F-DA43-D681-93BA-D86A8FA8</cd:sku>
+        <cd:length>2</cd:length>
+        <cd:tracks>20</cd:tracks>
+        <cd:style>orci luctus et</cd:style>
+        <cd:genre>montes, nascetur</cd:genre>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.recshop.fake/cd/GQA00OFQ7XG">
+        <cd:artist>Colin Ray</cd:artist>
+        <cd:country>Moldova</cd:country>
+        <cd:company>Aliquam Tincidunt Limited</cd:company>
+        <cd:price>13</cd:price>
+        <cd:year>1999</cd:year>
+        <cd:sku>97A3FAD8-DD42-00C6-E5CB-96BA-74D10C59</cd:sku>
+        <cd:length>3</cd:length>
+        <cd:tracks>1</cd:tracks>
+        <cd:style>Integer eu lacus.</cd:style>
+        <cd:genre>nec urna</cd:genre>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.recshop.fake/cd/AMY98TQL1JC">
+        <cd:artist>Mohammad Myers</cd:artist>
+        <cd:country>Rwanda</cd:country>
+        <cd:company>Amet Orci Consulting</cd:company>
+        <cd:price>17</cd:price>
+        <cd:year>1983</cd:year>
+        <cd:sku>A9FC9C13-F2F3-DAF6-2F1A-F99E-658D8DF3</cd:sku>
+        <cd:length>5</cd:length>
+        <cd:tracks>19</cd:tracks>
+        <cd:style>auctor vitae, aliquet</cd:style>
+        <cd:genre>Vivamus sit</cd:genre>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.recshop.fake/cd/YWM08PTT1JQ">
+        <cd:artist>Mufutau Bradley</cd:artist>
+        <cd:country>Fiji</cd:country>
+        <cd:company>Lorem Lorem Luctus Incorporated</cd:company>
+        <cd:price>19</cd:price>
+        <cd:year>1956</cd:year>
+        <cd:sku>9B274077-8679-19EC-D3AE-2863-5FF124BC</cd:sku>
+        <cd:length>1</cd:length>
+        <cd:tracks>19</cd:tracks>
+        <cd:style>diam luctus lobortis.</cd:style>
+        <cd:genre>massa. Quisque</cd:genre>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.recshop.fake/cd/VAX62OOJ0YO">
+        <cd:artist>Wyatt Pace</cd:artist>
+        <cd:country>Sierra Leone</cd:country>
+        <cd:company>Nisi A Incorporated</cd:company>
+        <cd:price>11</cd:price>
+        <cd:year>1959</cd:year>
+        <cd:sku>6F881C4E-D222-2DEA-E3B1-0CFB-F845A3E1</cd:sku>
+        <cd:length>2</cd:length>
+        <cd:tracks>9</cd:tracks>
+        <cd:style>id, ante. Nunc</cd:style>
+        <cd:genre>inceptos hymenaeos.</cd:genre>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.recshop.fake/cd/EET03NEK2DC">
+        <cd:artist>Dalton Sexton</cd:artist>
+        <cd:country>Canada</cd:country>
+        <cd:company>Dolor Incorporated</cd:company>
+        <cd:price>12</cd:price>
+        <cd:year>1958</cd:year>
+        <cd:sku>4B595986-BF00-3D25-D78F-AACB-04D7808C</cd:sku>
+        <cd:length>8</cd:length>
+        <cd:tracks>19</cd:tracks>
+        <cd:style>massa. Mauris vestibulum,</cd:style>
+        <cd:genre>odio semper</cd:genre>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.recshop.fake/cd/JKM28AFN7YG">
+        <cd:artist>Jameson Wiggins</cd:artist>
+        <cd:country>Lithuania</cd:country>
+        <cd:company>Dolor Ltd</cd:company>
+        <cd:price>12</cd:price>
+        <cd:year>1961</cd:year>
+        <cd:sku>C313C2C8-DAFE-3F67-EFB1-5198-09B84AC0</cd:sku>
+        <cd:length>9</cd:length>
+        <cd:tracks>19</cd:tracks>
+        <cd:style>posuere at, velit.</cd:style>
+        <cd:genre>id, libero.</cd:genre>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.recshop.fake/cd/DGI02ADN1RB">
+        <cd:artist>Ali Alexander</cd:artist>
+        <cd:country>Cocos (Keeling) Islands</cd:country>
+        <cd:company>Ultrices Vivamus Rhoncus Corporation</cd:company>
+        <cd:price>18</cd:price>
+        <cd:year>2006</cd:year>
+        <cd:sku>24CA8779-55DF-6D24-8516-75C8-8C91E410</cd:sku>
+        <cd:length>6</cd:length>
+        <cd:tracks>18</cd:tracks>
+        <cd:style>lacinia orci, consectetuer</cd:style>
+        <cd:genre>vitae odio</cd:genre>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.recshop.fake/cd/KTE90GKO5DB">
+        <cd:artist>Emmanuel Carter</cd:artist>
+        <cd:country>Qatar</cd:country>
+        <cd:company>Dolor Fusce Limited</cd:company>
+        <cd:price>16</cd:price>
+        <cd:year>2006</cd:year>
+        <cd:sku>2EA3DF5D-839A-8B63-3FD1-6945-A8B32E44</cd:sku>
+        <cd:length>9</cd:length>
+        <cd:tracks>19</cd:tracks>
+        <cd:style>semper, dui lectus</cd:style>
+        <cd:genre>pede. Praesent</cd:genre>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.recshop.fake/cd/VOU05QEX2LG">
+        <cd:artist>Tobias Savage</cd:artist>
+        <cd:country>Luxembourg</cd:country>
+        <cd:company>Fusce Dolor Corp.</cd:company>
+        <cd:price>11</cd:price>
+        <cd:year>1987</cd:year>
+        <cd:sku>DFF12D56-A3E5-2BD9-CEC5-B52C-DCFC060E</cd:sku>
+        <cd:length>4</cd:length>
+        <cd:tracks>1</cd:tracks>
+        <cd:style>Suspendisse non leo.</cd:style>
+        <cd:genre>montes, nascetur</cd:genre>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.recshop.fake/cd/PTH36ASK3XE">
+        <cd:artist>Troy Edwards</cd:artist>
+        <cd:country>United Kingdom</cd:country>
+        <cd:company>Ultrices Sit Associates</cd:company>
+        <cd:price>20</cd:price>
+        <cd:year>1992</cd:year>
+        <cd:sku>3B20B809-E186-0C69-438F-D432-F4E59C8D</cd:sku>
+        <cd:length>5</cd:length>
+        <cd:tracks>14</cd:tracks>
+        <cd:style>tristique senectus et</cd:style>
+        <cd:genre>vulputate eu,</cd:genre>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.recshop.fake/cd/BYP31DHZ3ND">
+        <cd:artist>Charles Thornton</cd:artist>
+        <cd:country>Saint Helena</cd:country>
+        <cd:company>Velit Incorporated</cd:company>
+        <cd:price>16</cd:price>
+        <cd:year>2013</cd:year>
+        <cd:sku>5C0A6D33-4E17-1F33-F7BF-8A9D-DA2C1AF6</cd:sku>
+        <cd:length>5</cd:length>
+        <cd:tracks>20</cd:tracks>
+        <cd:style>fames ac turpis</cd:style>
+        <cd:genre>fermentum risus,</cd:genre>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.recshop.fake/cd/CTK02EAT8PP">
+        <cd:artist>Quinlan Everett</cd:artist>
+        <cd:country>Antigua and Barbuda</cd:country>
+        <cd:company>Aliquam Corp.</cd:company>
+        <cd:price>15</cd:price>
+        <cd:year>1964</cd:year>
+        <cd:sku>A4C7566B-D5CA-21B3-3CB7-E7EF-B0F7D818</cd:sku>
+        <cd:length>9</cd:length>
+        <cd:tracks>17</cd:tracks>
+        <cd:style>pharetra ut, pharetra</cd:style>
+        <cd:genre>aliquet, sem</cd:genre>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.recshop.fake/cd/TMB92VLE2IC">
+        <cd:artist>Dane Golden</cd:artist>
+        <cd:country>Tanzania, United Republic of</cd:country>
+        <cd:company>Euismod Foundation</cd:company>
+        <cd:price>18</cd:price>
+        <cd:year>2004</cd:year>
+        <cd:sku>0507398B-65B8-906B-C179-EFAD-3756CA7C</cd:sku>
+        <cd:length>1</cd:length>
+        <cd:tracks>11</cd:tracks>
+        <cd:style>Proin nisl sem,</cd:style>
+        <cd:genre>nisl sem,</cd:genre>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.recshop.fake/cd/TNL56YCN8UK">
+        <cd:artist>Bruno Rich</cd:artist>
+        <cd:country>Western Sahara</cd:country>
+        <cd:company>Nam Consequat Foundation</cd:company>
+        <cd:price>11</cd:price>
+        <cd:year>1996</cd:year>
+        <cd:sku>14B705FD-5809-AD93-F44A-0D18-70A0F660</cd:sku>
+        <cd:length>7</cd:length>
+        <cd:tracks>3</cd:tracks>
+        <cd:style>Proin sed turpis</cd:style>
+        <cd:genre>Donec est.</cd:genre>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.recshop.fake/cd/JAX33FZI0CW">
+        <cd:artist>Hop Larson</cd:artist>
+        <cd:country>Lithuania</cd:country>
+        <cd:company>Erat Semper Rutrum Limited</cd:company>
+        <cd:price>14</cd:price>
+        <cd:year>1994</cd:year>
+        <cd:sku>82881EF2-90B4-84C5-45CF-BDE0-2107225A</cd:sku>
+        <cd:length>4</cd:length>
+        <cd:tracks>17</cd:tracks>
+        <cd:style>Aliquam adipiscing lobortis</cd:style>
+        <cd:genre>nulla. Cras</cd:genre>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.recshop.fake/cd/QKB97VXM6UO">
+        <cd:artist>Patrick Carlson</cd:artist>
+        <cd:country>New Caledonia</cd:country>
+        <cd:company>Sit Amet LLC</cd:company>
+        <cd:price>16</cd:price>
+        <cd:year>1995</cd:year>
+        <cd:sku>CD930C9A-16D8-2028-382E-28F1-5DFD7B53</cd:sku>
+        <cd:length>7</cd:length>
+        <cd:tracks>20</cd:tracks>
+        <cd:style>nec luctus felis</cd:style>
+        <cd:genre>erat, eget</cd:genre>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.recshop.fake/cd/DNF30IGE8GG">
+        <cd:artist>Noble Blankenship</cd:artist>
+        <cd:country>Ethiopia</cd:country>
+        <cd:company>Suspendisse Sed Dolor Corporation</cd:company>
+        <cd:price>13</cd:price>
+        <cd:year>1993</cd:year>
+        <cd:sku>30308F6C-9543-157E-D938-CBB1-C16FF932</cd:sku>
+        <cd:length>7</cd:length>
+        <cd:tracks>9</cd:tracks>
+        <cd:style>mauris eu elit.</cd:style>
+        <cd:genre>sem. Nulla</cd:genre>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.recshop.fake/cd/OPZ42FYZ9RC">
+        <cd:artist>Fitzgerald Medina</cd:artist>
+        <cd:country>Uzbekistan</cd:country>
+        <cd:company>In Dolor Fusce Inc.</cd:company>
+        <cd:price>11</cd:price>
+        <cd:year>1955</cd:year>
+        <cd:sku>BB7AB1DE-C41F-ABE9-B1BC-A4C1-8F08FB9A</cd:sku>
+        <cd:length>5</cd:length>
+        <cd:tracks>3</cd:tracks>
+        <cd:style>velit. Pellentesque ultricies</cd:style>
+        <cd:genre>aliquet vel,</cd:genre>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.recshop.fake/cd/WUS58KJO7DR">
+        <cd:artist>Chancellor Daniels</cd:artist>
+        <cd:country>Azerbaijan</cd:country>
+        <cd:company>Purus Ac Tellus Corporation</cd:company>
+        <cd:price>19</cd:price>
+        <cd:year>1958</cd:year>
+        <cd:sku>41BC076B-E801-B42A-C48E-249C-201CB36F</cd:sku>
+        <cd:length>4</cd:length>
+        <cd:tracks>4</cd:tracks>
+        <cd:style>feugiat. Sed nec</cd:style>
+        <cd:genre>quis, tristique</cd:genre>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.recshop.fake/cd/KSZ10MBE7RY">
+        <cd:artist>Kirk Chapman</cd:artist>
+        <cd:country>Bahamas</cd:country>
+        <cd:company>Lorem Fringilla Corp.</cd:company>
+        <cd:price>16</cd:price>
+        <cd:year>1972</cd:year>
+        <cd:sku>FB1B6426-A420-E516-03F5-9A5B-ADCDA7C9</cd:sku>
+        <cd:length>2</cd:length>
+        <cd:tracks>18</cd:tracks>
+        <cd:style>orci tincidunt adipiscing.</cd:style>
+        <cd:genre>imperdiet dictum</cd:genre>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.recshop.fake/cd/OXY51XYR5HL">
+        <cd:artist>Chandler Hester</cd:artist>
+        <cd:country>American Samoa</cd:country>
+        <cd:company>Nisi Nibh Lacinia Corporation</cd:company>
+        <cd:price>19</cd:price>
+        <cd:year>1987</cd:year>
+        <cd:sku>3231CBE5-DCA7-F07C-CAA5-394C-A3B5C0C0</cd:sku>
+        <cd:length>2</cd:length>
+        <cd:tracks>1</cd:tracks>
+        <cd:style>Vivamus sit amet</cd:style>
+        <cd:genre>Aliquam tincidunt,</cd:genre>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.recshop.fake/cd/ZMO71FBI7JC">
+        <cd:artist>Nero Yates</cd:artist>
+        <cd:country>Estonia</cd:country>
+        <cd:company>Dictum Eu Industries</cd:company>
+        <cd:price>10</cd:price>
+        <cd:year>1998</cd:year>
+        <cd:sku>79DD5DA5-FA7E-572E-31FF-068C-8BDD83FF</cd:sku>
+        <cd:length>8</cd:length>
+        <cd:tracks>17</cd:tracks>
+        <cd:style>eleifend egestas. Sed</cd:style>
+        <cd:genre>eros turpis</cd:genre>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.recshop.fake/cd/KSK67IQV7EQ">
+        <cd:artist>Lewis Huff</cd:artist>
+        <cd:country>Luxembourg</cd:country>
+        <cd:company>Cursus Non Consulting</cd:company>
+        <cd:price>15</cd:price>
+        <cd:year>1980</cd:year>
+        <cd:sku>4E727B27-8E4A-9B22-D2B4-86B3-20D0C0A1</cd:sku>
+        <cd:length>10</cd:length>
+        <cd:tracks>3</cd:tracks>
+        <cd:style>velit. Cras lorem</cd:style>
+        <cd:genre>Mauris nulla.</cd:genre>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.recshop.fake/cd/UEB62TXW1PB">
+        <cd:artist>Roth Haney</cd:artist>
+        <cd:country>Slovenia</cd:country>
+        <cd:company>Eget Corp.</cd:company>
+        <cd:price>20</cd:price>
+        <cd:year>2006</cd:year>
+        <cd:sku>4AE57EF8-D1C3-E2F4-7135-D667-A3685F9A</cd:sku>
+        <cd:length>7</cd:length>
+        <cd:tracks>10</cd:tracks>
+        <cd:style>sem elit, pharetra</cd:style>
+        <cd:genre>In nec</cd:genre>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.recshop.fake/cd/PJE04LLH8XU">
+        <cd:artist>Fritz Velasquez</cd:artist>
+        <cd:country>New Caledonia</cd:country>
+        <cd:company>Quisque LLP</cd:company>
+        <cd:price>14</cd:price>
+        <cd:year>2009</cd:year>
+        <cd:sku>81206290-C10D-7F7A-FE0E-8619-D8025EED</cd:sku>
+        <cd:length>1</cd:length>
+        <cd:tracks>2</cd:tracks>
+        <cd:style>volutpat nunc sit</cd:style>
+        <cd:genre>vel arcu.</cd:genre>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.recshop.fake/cd/LIS42SHT1KI">
+        <cd:artist>Clark Keith</cd:artist>
+        <cd:country>Lesotho</cd:country>
+        <cd:company>Sapien Cursus In Ltd</cd:company>
+        <cd:price>19</cd:price>
+        <cd:year>1953</cd:year>
+        <cd:sku>FE523411-52FC-5645-0C20-37C9-B7E795C9</cd:sku>
+        <cd:length>3</cd:length>
+        <cd:tracks>4</cd:tracks>
+        <cd:style>ipsum primis in</cd:style>
+        <cd:genre>luctus sit</cd:genre>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.recshop.fake/cd/WUQ85UYU2SK">
+        <cd:artist>Honorato Rosa</cd:artist>
+        <cd:country>Luxembourg</cd:country>
+        <cd:company>Posuere Vulputate Lacus LLP</cd:company>
+        <cd:price>16</cd:price>
+        <cd:year>1968</cd:year>
+        <cd:sku>0357CA46-D714-EEDB-D432-20C0-99F6DBCD</cd:sku>
+        <cd:length>9</cd:length>
+        <cd:tracks>2</cd:tracks>
+        <cd:style>viverra. Maecenas iaculis</cd:style>
+        <cd:genre>rhoncus. Donec</cd:genre>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.recshop.fake/cd/DSR99XDD9XE">
+        <cd:artist>Omar Moreno</cd:artist>
+        <cd:country>Belize</cd:country>
+        <cd:company>Arcu Aliquam Inc.</cd:company>
+        <cd:price>19</cd:price>
+        <cd:year>2013</cd:year>
+        <cd:sku>872E5DB3-BC86-8381-4B04-DBED-BDFCCDF5</cd:sku>
+        <cd:length>4</cd:length>
+        <cd:tracks>3</cd:tracks>
+        <cd:style>diam luctus lobortis.</cd:style>
+        <cd:genre>dolor, tempus</cd:genre>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.recshop.fake/cd/ORK84KCH1AC">
+        <cd:artist>Wayne Weber</cd:artist>
+        <cd:country>South Africa</cd:country>
+        <cd:company>Congue Elit Sed LLC</cd:company>
+        <cd:price>11</cd:price>
+        <cd:year>1967</cd:year>
+        <cd:sku>DE1AAF90-4B4E-A3B5-F183-A2A8-919D3AF0</cd:sku>
+        <cd:length>6</cd:length>
+        <cd:tracks>1</cd:tracks>
+        <cd:style>metus. Aenean sed</cd:style>
+        <cd:genre>semper auctor.</cd:genre>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.recshop.fake/cd/SWZ69MXQ6OD">
+        <cd:artist>Xenos Drake</cd:artist>
+        <cd:country>Congo</cd:country>
+        <cd:company>Integer Ltd</cd:company>
+        <cd:price>11</cd:price>
+        <cd:year>1989</cd:year>
+        <cd:sku>3AB1D60D-E181-0C44-BC65-7452-3D0D89FB</cd:sku>
+        <cd:length>3</cd:length>
+        <cd:tracks>15</cd:tracks>
+        <cd:style>ac mi eleifend</cd:style>
+        <cd:genre>non nisi.</cd:genre>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.recshop.fake/cd/GKG92RJR9SV">
+        <cd:artist>Benjamin Snow</cd:artist>
+        <cd:country>Uruguay</cd:country>
+        <cd:company>Mattis Ltd</cd:company>
+        <cd:price>11</cd:price>
+        <cd:year>2012</cd:year>
+        <cd:sku>38D1070C-BC9D-E7CE-63F5-76A7-95D44818</cd:sku>
+        <cd:length>1</cd:length>
+        <cd:tracks>20</cd:tracks>
+        <cd:style>et, magna. Praesent</cd:style>
+        <cd:genre>eget odio.</cd:genre>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.recshop.fake/cd/ZUE30ETN5JA">
+        <cd:artist>Herman Morin</cd:artist>
+        <cd:country>Tonga</cd:country>
+        <cd:company>Pellentesque Ltd</cd:company>
+        <cd:price>10</cd:price>
+        <cd:year>1969</cd:year>
+        <cd:sku>3BD70598-6818-0C73-2F37-EFA4-FD076679</cd:sku>
+        <cd:length>2</cd:length>
+        <cd:tracks>7</cd:tracks>
+        <cd:style>non, cursus non,</cd:style>
+        <cd:genre>cursus luctus,</cd:genre>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.recshop.fake/cd/ODL70QGA5XI">
+        <cd:artist>Moses Ortega</cd:artist>
+        <cd:country>Palau</cd:country>
+        <cd:company>Mollis Associates</cd:company>
+        <cd:price>17</cd:price>
+        <cd:year>1966</cd:year>
+        <cd:sku>9B502C8C-EDE0-99BB-D851-178D-9219CFE5</cd:sku>
+        <cd:length>8</cd:length>
+        <cd:tracks>5</cd:tracks>
+        <cd:style>urna. Vivamus molestie</cd:style>
+        <cd:genre>semper erat,</cd:genre>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.recshop.fake/cd/FSB02KDI9RE">
+        <cd:artist>Addison Vargas</cd:artist>
+        <cd:country>Philippines</cd:country>
+        <cd:company>Mollis Dui In PC</cd:company>
+        <cd:price>20</cd:price>
+        <cd:year>1972</cd:year>
+        <cd:sku>7D4093FE-F34D-3392-0315-6C67-0D95B483</cd:sku>
+        <cd:length>2</cd:length>
+        <cd:tracks>17</cd:tracks>
+        <cd:style>egestas. Duis ac</cd:style>
+        <cd:genre>Donec at</cd:genre>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.recshop.fake/cd/DLT16WNB6YM">
+        <cd:artist>Allistair Dean</cd:artist>
+        <cd:country>Nicaragua</cd:country>
+        <cd:company>Bibendum Consulting</cd:company>
+        <cd:price>19</cd:price>
+        <cd:year>1990</cd:year>
+        <cd:sku>BC1186AB-7603-73D7-AC54-FC01-7E989804</cd:sku>
+        <cd:length>4</cd:length>
+        <cd:tracks>2</cd:tracks>
+        <cd:style>Quisque varius. Nam</cd:style>
+        <cd:genre>nonummy ultricies</cd:genre>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.recshop.fake/cd/TBK48TSU5TX">
+        <cd:artist>Hunter Alvarez</cd:artist>
+        <cd:country>Malawi</cd:country>
+        <cd:company>Orci Adipiscing Non Ltd</cd:company>
+        <cd:price>12</cd:price>
+        <cd:year>2008</cd:year>
+        <cd:sku>0A884089-59F2-1FA1-6345-F5B6-271F0DD1</cd:sku>
+        <cd:length>6</cd:length>
+        <cd:tracks>8</cd:tracks>
+        <cd:style>mauris sapien, cursus</cd:style>
+        <cd:genre>eu sem.</cd:genre>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.recshop.fake/cd/IPW78DCU4VE">
+        <cd:artist>Hamish Britt</cd:artist>
+        <cd:country>Honduras</cd:country>
+        <cd:company>Tincidunt Congue Turpis LLC</cd:company>
+        <cd:price>20</cd:price>
+        <cd:year>2001</cd:year>
+        <cd:sku>A4495276-BD08-41E0-D4FA-9985-6A73146B</cd:sku>
+        <cd:length>6</cd:length>
+        <cd:tracks>14</cd:tracks>
+        <cd:style>dis parturient montes,</cd:style>
+        <cd:genre>justo nec</cd:genre>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.recshop.fake/cd/LYA22AXV5KE">
+        <cd:artist>Samson Salazar</cd:artist>
+        <cd:country>Greenland</cd:country>
+        <cd:company>Lorem Sit LLC</cd:company>
+        <cd:price>10</cd:price>
+        <cd:year>2011</cd:year>
+        <cd:sku>01932EAE-7536-20BB-B1CA-8BAC-FABC42E4</cd:sku>
+        <cd:length>3</cd:length>
+        <cd:tracks>11</cd:tracks>
+        <cd:style>dapibus id, blandit</cd:style>
+        <cd:genre>Vivamus nisi.</cd:genre>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.recshop.fake/cd/MAI10CVQ7ML">
+        <cd:artist>Hall Cantu</cd:artist>
+        <cd:country>Ecuador</cd:country>
+        <cd:company>Quis Accumsan Convallis Ltd</cd:company>
+        <cd:price>12</cd:price>
+        <cd:year>1989</cd:year>
+        <cd:sku>B227646B-8F3E-6524-D987-18C4-9D13A9A5</cd:sku>
+        <cd:length>8</cd:length>
+        <cd:tracks>17</cd:tracks>
+        <cd:style>Nam nulla magna,</cd:style>
+        <cd:genre>elit, dictum</cd:genre>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.recshop.fake/cd/MRW32KUJ9OQ">
+        <cd:artist>Burke Ewing</cd:artist>
+        <cd:country>Tokelau</cd:country>
+        <cd:company>Curae; Phasellus Corp.</cd:company>
+        <cd:price>15</cd:price>
+        <cd:year>1989</cd:year>
+        <cd:sku>86BC1576-1544-7922-C4A6-C541-ABE097A2</cd:sku>
+        <cd:length>9</cd:length>
+        <cd:tracks>9</cd:tracks>
+        <cd:style>tellus, imperdiet non,</cd:style>
+        <cd:genre>vulputate, posuere</cd:genre>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.recshop.fake/cd/GHK05CMJ4TM">
+        <cd:artist>Paki Jackson</cd:artist>
+        <cd:country>Guinea-bissau</cd:country>
+        <cd:company>Mi Fringilla Mi Foundation</cd:company>
+        <cd:price>11</cd:price>
+        <cd:year>1967</cd:year>
+        <cd:sku>17511DC4-B339-FBFC-8AEC-E23F-B471C38D</cd:sku>
+        <cd:length>7</cd:length>
+        <cd:tracks>19</cd:tracks>
+        <cd:style>leo. Morbi neque</cd:style>
+        <cd:genre>id nunc</cd:genre>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.recshop.fake/cd/ZAT47QGQ8MP">
+        <cd:artist>Noble Riddle</cd:artist>
+        <cd:country>Angola</cd:country>
+        <cd:company>Nec Leo Inc.</cd:company>
+        <cd:price>10</cd:price>
+        <cd:year>2009</cd:year>
+        <cd:sku>8C0A8436-F15B-D2B3-1040-F5C7-06BA333C</cd:sku>
+        <cd:length>10</cd:length>
+        <cd:tracks>7</cd:tracks>
+        <cd:style>Donec felis orci,</cd:style>
+        <cd:genre>tortor nibh</cd:genre>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.recshop.fake/cd/IZV49CMY4GK">
+        <cd:artist>Keegan Morgan</cd:artist>
+        <cd:country>Swaziland</cd:country>
+        <cd:company>Auctor Nunc Inc.</cd:company>
+        <cd:price>12</cd:price>
+        <cd:year>1987</cd:year>
+        <cd:sku>7A21E55B-4A2B-3C9B-8DF1-2FF9-F01E754E</cd:sku>
+        <cd:length>1</cd:length>
+        <cd:tracks>9</cd:tracks>
+        <cd:style>tincidunt vehicula risus.</cd:style>
+        <cd:genre>Quisque ornare</cd:genre>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.recshop.fake/cd/OJA01ZFI9EY">
+        <cd:artist>Paki Hancock</cd:artist>
+        <cd:country>Nepal</cd:country>
+        <cd:company>Vehicula Institute</cd:company>
+        <cd:price>18</cd:price>
+        <cd:year>1966</cd:year>
+        <cd:sku>E30CB51A-58A4-40E5-1A15-3754-A58F4BE3</cd:sku>
+        <cd:length>10</cd:length>
+        <cd:tracks>19</cd:tracks>
+        <cd:style>nec urna et</cd:style>
+        <cd:genre>Donec non</cd:genre>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.recshop.fake/cd/YTH04JJP8SX">
+        <cd:artist>Demetrius Burnett</cd:artist>
+        <cd:country>Djibouti</cd:country>
+        <cd:company>Fringilla Ornare Industries</cd:company>
+        <cd:price>19</cd:price>
+        <cd:year>2011</cd:year>
+        <cd:sku>80685168-058A-AAD4-5C24-BE9B-4F1ECCD4</cd:sku>
+        <cd:length>9</cd:length>
+        <cd:tracks>5</cd:tracks>
+        <cd:style>risus, at fringilla</cd:style>
+        <cd:genre>enim. Mauris</cd:genre>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.recshop.fake/cd/XXO26RNJ5CD">
+        <cd:artist>Flynn Donaldson</cd:artist>
+        <cd:country>Papua New Guinea</cd:country>
+        <cd:company>Metus Urna Inc.</cd:company>
+        <cd:price>10</cd:price>
+        <cd:year>1967</cd:year>
+        <cd:sku>E03DD0A2-DEFF-33AA-DEA1-C8A0-3599FABD</cd:sku>
+        <cd:length>8</cd:length>
+        <cd:tracks>19</cd:tracks>
+        <cd:style>fermentum metus. Aenean</cd:style>
+        <cd:genre>sit amet</cd:genre>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.recshop.fake/cd/ZKB83RYD2PE">
+        <cd:artist>Upton Fisher</cd:artist>
+        <cd:country>Sao Tome and Principe</cd:country>
+        <cd:company>Purus Maecenas Libero Institute</cd:company>
+        <cd:price>18</cd:price>
+        <cd:year>1976</cd:year>
+        <cd:sku>6FC0E6BB-2A6C-9A85-D514-4741-CF0E3A1A</cd:sku>
+        <cd:length>6</cd:length>
+        <cd:tracks>18</cd:tracks>
+        <cd:style>Donec tempus, lorem</cd:style>
+        <cd:genre>nec tempus</cd:genre>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.recshop.fake/cd/GVZ01BIL5QO">
+        <cd:artist>Donovan Hart</cd:artist>
+        <cd:country>Cocos (Keeling) Islands</cd:country>
+        <cd:company>Nunc Sed Limited</cd:company>
+        <cd:price>12</cd:price>
+        <cd:year>1990</cd:year>
+        <cd:sku>5994C457-D315-8880-8143-5126-33CAB630</cd:sku>
+        <cd:length>10</cd:length>
+        <cd:tracks>17</cd:tracks>
+        <cd:style>justo eu arcu.</cd:style>
+        <cd:genre>sem mollis</cd:genre>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.recshop.fake/cd/WUL48RPF7UQ">
+        <cd:artist>Axel Nguyen</cd:artist>
+        <cd:country>Dominica</cd:country>
+        <cd:company>Commodo At Libero LLC</cd:company>
+        <cd:price>12</cd:price>
+        <cd:year>1977</cd:year>
+        <cd:sku>FF69ACDB-CA08-BBCA-92E0-0B67-911DED7D</cd:sku>
+        <cd:length>9</cd:length>
+        <cd:tracks>18</cd:tracks>
+        <cd:style>lorem ipsum sodales</cd:style>
+        <cd:genre>est ac</cd:genre>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.recshop.fake/cd/YUH59FNZ9ZK">
+        <cd:artist>Malachi Fitzpatrick</cd:artist>
+        <cd:country>Croatia</cd:country>
+        <cd:company>Ac Mattis Inc.</cd:company>
+        <cd:price>20</cd:price>
+        <cd:year>1990</cd:year>
+        <cd:sku>8175F5CC-2A4A-59DB-71B2-0868-7A1680D0</cd:sku>
+        <cd:length>2</cd:length>
+        <cd:tracks>7</cd:tracks>
+        <cd:style>vitae, erat. Vivamus</cd:style>
+        <cd:genre>mollis. Integer</cd:genre>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.recshop.fake/cd/THW23PJK1UY">
+        <cd:artist>Mark Castro</cd:artist>
+        <cd:country>Timor-leste</cd:country>
+        <cd:company>Sem Pellentesque Ut Corporation</cd:company>
+        <cd:price>14</cd:price>
+        <cd:year>1958</cd:year>
+        <cd:sku>860FF0D0-2264-D82A-5407-0564-AFA1170A</cd:sku>
+        <cd:length>9</cd:length>
+        <cd:tracks>1</cd:tracks>
+        <cd:style>Phasellus elit pede,</cd:style>
+        <cd:genre>scelerisque neque</cd:genre>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.recshop.fake/cd/UQB19CRA4AH">
+        <cd:artist>August Howell</cd:artist>
+        <cd:country>Taiwan, Province of China</cd:country>
+        <cd:company>Proin Inc.</cd:company>
+        <cd:price>15</cd:price>
+        <cd:year>1977</cd:year>
+        <cd:sku>20F3163B-5352-4D08-640D-1BE4-A0EA7FF9</cd:sku>
+        <cd:length>10</cd:length>
+        <cd:tracks>19</cd:tracks>
+        <cd:style>fringilla mi lacinia</cd:style>
+        <cd:genre>augue scelerisque</cd:genre>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.recshop.fake/cd/ZXC32EGH8EO">
+        <cd:artist>Francis Albert</cd:artist>
+        <cd:country>Serbia and Montenegro</cd:country>
+        <cd:company>Mollis Duis Sit Corporation</cd:company>
+        <cd:price>19</cd:price>
+        <cd:year>1984</cd:year>
+        <cd:sku>8373A624-6116-7132-550D-5EFB-21F7F208</cd:sku>
+        <cd:length>4</cd:length>
+        <cd:tracks>10</cd:tracks>
+        <cd:style>orci, consectetuer euismod</cd:style>
+        <cd:genre>Integer aliquam</cd:genre>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.recshop.fake/cd/LZQ73RPR6OK">
+        <cd:artist>Ulric Stuart</cd:artist>
+        <cd:country>Ethiopia</cd:country>
+        <cd:company>Dui LLC</cd:company>
+        <cd:price>18</cd:price>
+        <cd:year>1980</cd:year>
+        <cd:sku>CA53A732-DBDD-AB1F-B7B3-EADA-F84A2C0E</cd:sku>
+        <cd:length>5</cd:length>
+        <cd:tracks>9</cd:tracks>
+        <cd:style>nec enim. Nunc</cd:style>
+        <cd:genre>mollis non,</cd:genre>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.recshop.fake/cd/URQ51ISA9OR">
+        <cd:artist>Thomas Fulton</cd:artist>
+        <cd:country>Djibouti</cd:country>
+        <cd:company>Risus Nulla Eget Corp.</cd:company>
+        <cd:price>16</cd:price>
+        <cd:year>1993</cd:year>
+        <cd:sku>F1E93BA2-3134-F88B-9934-6EEE-03A023A1</cd:sku>
+        <cd:length>4</cd:length>
+        <cd:tracks>12</cd:tracks>
+        <cd:style>dignissim pharetra. Nam</cd:style>
+        <cd:genre>nisi dictum</cd:genre>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.recshop.fake/cd/MIC09III2FH">
+        <cd:artist>Duncan Haley</cd:artist>
+        <cd:country>Paraguay</cd:country>
+        <cd:company>Donec Felis Industries</cd:company>
+        <cd:price>18</cd:price>
+        <cd:year>1976</cd:year>
+        <cd:sku>36E492FA-7860-DCB5-3A2A-17B3-618B4C08</cd:sku>
+        <cd:length>2</cd:length>
+        <cd:tracks>19</cd:tracks>
+        <cd:style>elit fermentum risus,</cd:style>
+        <cd:genre>ligula. Donec</cd:genre>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.recshop.fake/cd/QEM88QMY0FD">
+        <cd:artist>Amos Reyes</cd:artist>
+        <cd:country>Kenya</cd:country>
+        <cd:company>Amet Massa Associates</cd:company>
+        <cd:price>15</cd:price>
+        <cd:year>1959</cd:year>
+        <cd:sku>74A39731-A2E6-3ADB-FB32-56A3-34B15E4D</cd:sku>
+        <cd:length>2</cd:length>
+        <cd:tracks>19</cd:tracks>
+        <cd:style>nisi a odio</cd:style>
+    </rdf:Description>
+</rdf:RDF>
+

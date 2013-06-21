@@ -10,6 +10,7 @@ import org.apache.http.HttpResponse;
 import org.apache.http.auth.Credentials;
 import org.apache.http.auth.UsernamePasswordCredentials;
 import org.custommonkey.xmlunit.XMLUnit;
+import org.skyscreamer.jsonassert.JSONAssert;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.ClassPathResource;
 import uk.co.bubobubo.cuke.bean.RequestAttribute;
@@ -89,6 +90,12 @@ public class BuboStepDefs {
 
         String urlWithCredentials = bubobuboUrl.replace("http://", "http://" + testRepo + ":" + testRepoPass + "@") + path;
 		response = HttpUtils.httpGet(urlWithCredentials, params);
+	}
+
+
+	@When("^I put to \"([^\"]*)\" on sparqlr$")
+	public void I_put(String path) throws Throwable {
+		response = HttpUtils.httpPut(sparqlrUrl + path );
 	}
 
 	@When("^I post to \"([^\"]*)\" with$")
@@ -263,4 +270,15 @@ public class BuboStepDefs {
         String urlWithCredentials = bubobuboUrl.replace("http://", "http://" + testRepo+repoNumber + ":" + testRepoPass +repoNumber+ "@") + path;
         response = HttpUtils.httpGet(urlWithCredentials, params);
     }
+
+	@And("^the response body JSON should match the file \"([^\"]*)\"$")
+	public void the_response_body_JSON_should_match_the_file(String path) throws Throwable {
+
+		File file = new ClassPathResource("expected/" + path).getFile();
+
+		String expected = FileUtils.readFileToString(file);
+		String actual = HttpUtils.responseAsString;
+
+		JSONAssert.assertEquals(expected, actual, false);
+	}
 }
