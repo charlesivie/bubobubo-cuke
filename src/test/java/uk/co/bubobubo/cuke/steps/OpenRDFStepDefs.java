@@ -6,7 +6,6 @@ import org.openrdf.query.QueryLanguage;
 import org.openrdf.query.QueryResult;
 import org.openrdf.repository.RepositoryConnection;
 import org.openrdf.repository.http.HTTPRepository;
-import org.springframework.beans.factory.annotation.Value;
 import uk.co.bubobubo.cuke.bean.RequestAttribute;
 import uk.co.bubobubo.cuke.utils.querystrategy.QueryStrategy;
 
@@ -18,12 +17,12 @@ import static uk.co.bubobubo.cuke.utils.querystrategy.QueryStrategyFactory.selec
 
 public class OpenRDFStepDefs {
 
-    @Value("${repository.base.uri}")
-	private String repositoryBaseUri; // = "http://localhost:8080/openrdf-sesame/"
-    @Value("${test.user.username}")
-	private String username; // = "test@user.com";
-    @Value("${test.user.password}")
-	private String password; // = "password";
+    //@Value("${repository.base.uri}")
+	private String repositoryBaseUri = "http://localhost:8080/openrdf-sesame/";
+    //@Value("${test.user.username}")
+	private String username = "test@user.com";
+    //@Value("${test.user.password}")
+	private String password = "password";
 
 	private boolean askResult;
 	private QueryResult queryResult;
