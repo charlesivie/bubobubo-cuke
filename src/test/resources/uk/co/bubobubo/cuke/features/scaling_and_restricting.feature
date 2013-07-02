@@ -17,6 +17,10 @@ Feature: scaling and restricting repositories - small, medium and large
 	When I post "rdf/music.xml" to "/repositories/test-repo-1/statements" with
 	  | type   | name         | value                             |
 	  | header | Content-Type | application/rdf+xml;charset=UTF-8 |
+	Then I should get a 204 response code
+	When I post "rdf/music.xml" to "/repositories/test-repo-1/statements" with
+	  | type   | name         | value                             |
+	  | header | Content-Type | application/rdf+xml;charset=UTF-8 |
 	Then I should get a 403 response code
 	And the response body should contain the string "FREE repo's are limited to 1,000 triples. logon to Sparqlr.com to upgrade."
 
@@ -24,6 +28,10 @@ Feature: scaling and restricting repositories - small, medium and large
 	Given I start the http session
 	And I create the test user and repo
 	When I post "rdf/music_9999_triples.xml" to "/repositories/test-repo-1/statements" with
+	  | type   | name         | value                             |
+	  | header | Content-Type | application/rdf+xml;charset=UTF-8 |
+	Then I should get a 204 response code
+	When I post "rdf/music.xml" to "/repositories/test-repo-1/statements" with
 	  | type   | name         | value                             |
 	  | header | Content-Type | application/rdf+xml;charset=UTF-8 |
 	Then I should get a 204 response code
@@ -43,6 +51,10 @@ Feature: scaling and restricting repositories - small, medium and large
 	When I post "rdf/music.xml" to "/repositories/test-repo-1/statements" with
 	  | type   | name         | value                             |
 	  | header | Content-Type | application/rdf+xml;charset=UTF-8 |
+	Then I should get a 204 response code
+	When I post "rdf/music.xml" to "/repositories/test-repo-1/statements" with
+	  | type   | name         | value                             |
+	  | header | Content-Type | application/rdf+xml;charset=UTF-8 |
 	Then I should get a 403 response code
 	And the response body should contain the string "MEDIUM repo's are limited to 100,000 triples. logon to Sparqlr.com to upgrade."
 
@@ -51,6 +63,10 @@ Feature: scaling and restricting repositories - small, medium and large
 	Given I start the http session
 	And I create the test user and repo
 	When I post "rdf/music_999999_triples.xml" to "/repositories/test-repo-1/statements" with
+	  | type   | name         | value                             |
+	  | header | Content-Type | application/rdf+xml;charset=UTF-8 |
+	Then I should get a 204 response code
+	When I post "rdf/music.xml" to "/repositories/test-repo-1/statements" with
 	  | type   | name         | value                             |
 	  | header | Content-Type | application/rdf+xml;charset=UTF-8 |
 	Then I should get a 204 response code

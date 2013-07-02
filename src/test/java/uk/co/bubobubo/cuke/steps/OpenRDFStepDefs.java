@@ -6,27 +6,34 @@ import org.openrdf.query.QueryLanguage;
 import org.openrdf.query.QueryResult;
 import org.openrdf.repository.RepositoryConnection;
 import org.openrdf.repository.http.HTTPRepository;
+import org.springframework.beans.factory.annotation.Value;
 import uk.co.bubobubo.cuke.bean.RequestAttribute;
 import uk.co.bubobubo.cuke.utils.querystrategy.QueryStrategy;
 
 import java.util.List;
 
-import static uk.co.bubobubo.cuke.utils.querystrategy.QueryStrategyFactory.askQueryStrategy;
-import static uk.co.bubobubo.cuke.utils.querystrategy.QueryStrategyFactory.constructQueryStrategy;
-import static uk.co.bubobubo.cuke.utils.querystrategy.QueryStrategyFactory.selectQueryStrategy;
+import static org.junit.Assert.assertEquals;
+import static uk.co.bubobubo.cuke.utils.querystrategy.QueryStrategyFactory.*;
 
 public class OpenRDFStepDefs {
 
-    //@Value("${repository.base.uri}")
-	private String repositoryBaseUri = "http://localhost:8080/openrdf-sesame/";
-    //@Value("${test.user.username}")
-	private String username = "test@user.com";
-    //@Value("${test.user.password}")
-	private String password = "password";
+    @Value("${repository.base.uri}")
+	private String repositoryBaseUri;
+    @Value("${test.user.username}")
+	private String username;
+    @Value("${test.user.password}")
+	private String password;
 
 	private boolean askResult;
 	private QueryResult queryResult;
 	private String resultAsString;
+
+
+	@When("^the number of explicit triples in from \"([^\"]*)\" is (\\d+)$")
+	public void the_number_of_explicit_triples_in_from_is(String repositoryId, int count) throws Throwable {
+		RepositoryConnection connection = connect(repositoryId);
+		assertEquals(count, connection.size());
+	}
 
     @When("^I use open-rdf libs to SELECT from \"([^\"]*)\" with the parameters$")
 	public void I_use_open_rdf_libs_to_SELECT_from_with_the_parameters(String repositoryId, List<RequestAttribute> params)
@@ -94,18 +101,6 @@ public class OpenRDFStepDefs {
 			}
 		}
 		return null;
-	}
-
-	public void setRepositoryBaseUri(String repositoryBaseUri) {
-		this.repositoryBaseUri = repositoryBaseUri;
-	}
-
-	public void setUsername(String username) {
-		this.username = username;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
 	}
 }
 
