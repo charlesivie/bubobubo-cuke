@@ -1,6 +1,10 @@
 package uk.co.bubobubo.cuke.steps;
 
+import cucumber.api.java.en.And;
+import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import org.json.JSONArray;
+import org.json.JSONObject;
 import org.openrdf.query.Query;
 import org.openrdf.query.QueryLanguage;
 import org.openrdf.query.QueryResult;
@@ -13,7 +17,10 @@ import uk.co.bubobubo.cuke.utils.querystrategy.QueryStrategy;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
-import static uk.co.bubobubo.cuke.utils.querystrategy.QueryStrategyFactory.*;
+import static org.junit.Assert.assertNotNull;
+import static uk.co.bubobubo.cuke.utils.querystrategy.QueryStrategyFactory.askQueryStrategy;
+import static uk.co.bubobubo.cuke.utils.querystrategy.QueryStrategyFactory.constructQueryStrategy;
+import static uk.co.bubobubo.cuke.utils.querystrategy.QueryStrategyFactory.selectQueryStrategy;
 
 public class OpenRDFStepDefs {
 
@@ -60,6 +67,9 @@ public class OpenRDFStepDefs {
 	private void doInSesame(String repositoryId, List<RequestAttribute> params, QueryStrategy strategy)
             throws Throwable {
 
+        resultAsString = null;
+        queryResult = null;
+
 		String queryParameter = getParameter("query", params);
 		String acceptHeader = getHeader("accept", params);
         String language = getParameter("queryLn", params);
@@ -102,5 +112,32 @@ public class OpenRDFStepDefs {
 		}
 		return null;
 	}
+
+    @Then("^I should get an empty response with no errors$")
+    public void I_should_get_an_empty_response_with_no_errors() throws Throwable {
+
+        JSONObject responseJson = new JSONObject(resultAsString);
+        JSONArray results = responseJson.getJSONObject("results").getJSONArray("bindings");
+        assertEquals(141, results.length());
+    }
+
+    @Then("^I should get an empty resultset with no errors$")
+    public void I_should_get_an_empty_resultset_with_no_errors() throws Throwable {
+
+        assertNotNull(queryResult);
+        //assertFalse(queryResult.hasNext());
+    }
+
+    @And("^the boolean response should be \"([^\"]*)\"$")
+    public void the_boolean_response_should_respond_with(String value) throws Throwable {
+
+        assertEquals(Boolean.valueOf(value), queryResult.next());
+    }
+
+    @And("^the string response should be \"([^\"]*)\"$")
+    public void the_string_response_should_respond_with(String value) throws Throwable {
+
+        assertEquals(value, resultAsString.trim());
+    }
 }
 
