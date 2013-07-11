@@ -1,0 +1,127 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sesame: <http://www.openrdf.org/schema/sesame#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix fn: <http://www.w3.org/2005/xpath-functions#> .
+
+rdf:type a rdf:Property , rdfs:Resource ;
+	rdfs:domain rdfs:Resource ;
+	rdfs:range rdfs:Class ;
+	rdfs:subPropertyOf rdf:type .
+
+rdf:Property a rdfs:Resource , rdfs:Class ;
+	rdfs:subClassOf rdf:Property , rdfs:Resource .
+
+rdf:subject a rdf:Property , rdfs:Resource ;
+	rdfs:domain rdf:Statement ;
+	rdfs:range rdfs:Resource ;
+	rdfs:subPropertyOf rdf:subject .
+
+rdf:predicate a rdf:Property , rdfs:Resource ;
+	rdfs:domain rdf:Statement ;
+	rdfs:range rdfs:Resource ;
+	rdfs:subPropertyOf rdf:predicate .
+
+rdf:object a rdf:Property , rdfs:Resource ;
+	rdfs:domain rdf:Statement ;
+	rdfs:range rdfs:Resource ;
+	rdfs:subPropertyOf rdf:object .
+
+rdf:first a rdf:Property , rdfs:Resource ;
+	rdfs:domain rdf:List ;
+	rdfs:range rdfs:Resource ;
+	rdfs:subPropertyOf rdf:first .
+
+rdf:rest a rdf:Property , rdfs:Resource ;
+	rdfs:domain rdf:List ;
+	rdfs:range rdf:List ;
+	rdfs:subPropertyOf rdf:rest .
+
+rdf:value a rdf:Property , rdfs:Resource ;
+	rdfs:domain rdfs:Resource ;
+	rdfs:range rdfs:Resource ;
+	rdfs:subPropertyOf rdf:value .
+
+rdf:nil a rdf:List , rdfs:Resource .
+
+rdf:List a rdfs:Resource , rdfs:Class ;
+	rdfs:subClassOf rdf:List , rdfs:Resource .
+
+rdfs:domain a rdf:Property , rdfs:Resource ;
+	rdfs:domain rdf:Property ;
+	rdfs:range rdfs:Class ;
+	rdfs:subPropertyOf rdfs:domain .
+
+rdfs:Resource a rdfs:Resource , rdfs:Class ;
+	rdfs:subClassOf rdfs:Resource .
+
+rdfs:range a rdf:Property , rdfs:Resource ;
+	rdfs:domain rdf:Property ;
+	rdfs:range rdfs:Class ;
+	rdfs:subPropertyOf rdfs:range .
+
+rdfs:subPropertyOf a rdf:Property , rdfs:Resource ;
+	rdfs:domain rdf:Property ;
+	rdfs:range rdf:Property ;
+	rdfs:subPropertyOf rdfs:subPropertyOf .
+
+rdfs:subClassOf a rdf:Property , rdfs:Resource ;
+	rdfs:domain rdfs:Class ;
+	rdfs:range rdfs:Class ;
+	rdfs:subPropertyOf rdfs:subClassOf .
+
+rdfs:Class a rdfs:Resource , rdfs:Class ;
+	rdfs:subClassOf rdfs:Resource , rdfs:Class .
+
+rdf:Statement a rdfs:Resource , rdfs:Class ;
+	rdfs:subClassOf rdfs:Resource , rdf:Statement .
+
+rdfs:member a rdf:Property , rdfs:Resource ;
+	rdfs:domain rdfs:Resource ;
+	rdfs:range rdfs:Resource ;
+	rdfs:subPropertyOf rdfs:member .
+
+rdfs:seeAlso a rdf:Property , rdfs:Resource ;
+	rdfs:domain rdfs:Resource ;
+	rdfs:range rdfs:Resource ;
+	rdfs:subPropertyOf rdfs:seeAlso .
+
+rdfs:isDefinedBy a rdf:Property , rdfs:Resource ;
+	rdfs:domain rdfs:Resource ;
+	rdfs:range rdfs:Resource ;
+	rdfs:subPropertyOf rdfs:seeAlso , rdfs:isDefinedBy .
+
+rdfs:comment a rdf:Property , rdfs:Resource ;
+	rdfs:domain rdfs:Resource ;
+	rdfs:range rdfs:Literal ;
+	rdfs:subPropertyOf rdfs:comment .
+
+rdfs:label a rdf:Property , rdfs:Resource ;
+	rdfs:domain rdfs:Resource ;
+	rdfs:range rdfs:Literal ;
+	rdfs:subPropertyOf rdfs:label .
+
+rdfs:Literal a rdfs:Resource , rdfs:Class ;
+	rdfs:subClassOf rdfs:Resource , rdfs:Literal .
+
+rdf:Alt a rdfs:Resource , rdfs:Class ;
+	rdfs:subClassOf rdfs:Resource , rdf:Alt , rdfs:Container .
+
+rdfs:Container a rdfs:Resource , rdfs:Class ;
+	rdfs:subClassOf rdfs:Resource , rdfs:Container .
+
+rdf:Bag a rdfs:Resource , rdfs:Class ;
+	rdfs:subClassOf rdfs:Resource , rdfs:Container , rdf:Bag .
+
+rdf:Seq a rdfs:Resource , rdfs:Class ;
+	rdfs:subClassOf rdfs:Resource , rdfs:Container , rdf:Seq .
+
+rdfs:ContainerMembershipProperty a rdfs:Resource , rdfs:Class ;
+	rdfs:subClassOf rdf:Property , rdfs:Resource , rdfs:ContainerMembershipProperty .
+
+rdf:XMLLiteral a rdfs:Resource , rdfs:Class , rdfs:Datatype ;
+	rdfs:subClassOf rdfs:Resource , rdfs:Literal , rdf:XMLLiteral .
+
+rdfs:Datatype a rdfs:Resource , rdfs:Class ;
+	rdfs:subClassOf rdfs:Resource , rdfs:Class , rdfs:Datatype .

@@ -1,8 +1,14 @@
 package uk.co.bubobubo.cuke.steps;
 
+import com.hp.hpl.jena.rdf.model.Model;
+import com.hp.hpl.jena.rdf.model.ModelFactory;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import org.apache.commons.codec.CharEncoding;
+import org.apache.commons.io.FileUtils;
+import org.apache.commons.io.FilenameUtils;
+import org.custommonkey.xmlunit.XMLUnit;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.openrdf.query.Query;
@@ -10,12 +16,17 @@ import org.openrdf.query.QueryLanguage;
 import org.openrdf.query.QueryResult;
 import org.openrdf.repository.RepositoryConnection;
 import org.openrdf.repository.http.HTTPRepository;
+import org.openrdf.rio.RDFFormat;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.core.io.ClassPathResource;
 import uk.co.bubobubo.cuke.bean.RequestAttribute;
 import uk.co.bubobubo.cuke.utils.querystrategy.QueryStrategy;
 
+import java.io.ByteArrayInputStream;
+import java.io.File;
 import java.util.List;
 
+import static org.custommonkey.xmlunit.XMLAssert.assertXMLEqual;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static uk.co.bubobubo.cuke.utils.querystrategy.QueryStrategyFactory.askQueryStrategy;
@@ -128,16 +139,43 @@ public class OpenRDFStepDefs {
         //assertFalse(queryResult.hasNext());
     }
 
-    @And("^the boolean response should be \"([^\"]*)\"$")
+    @And("^the boolean result should be \"([^\"]*)\"$")
     public void the_boolean_response_should_respond_with(String value) throws Throwable {
 
         assertEquals(Boolean.valueOf(value), queryResult.next());
     }
 
-    @And("^the string response should be \"([^\"]*)\"$")
+    @And("^the string result should be \"([^\"]*)\"$")
     public void the_string_response_should_respond_with(String value) throws Throwable {
 
         assertEquals(value, resultAsString.trim());
+    }
+
+    @Then("^the result should match the file \"([^\"]*)\"$")
+    public void the_response_body_should_match_the_file(String classpathFileLocation) throws Throwable {
+        File file = new ClassPathResource("expected/" + classpathFileLocation).getFile();
+
+        String expected = FileUtils.readFileToString(file);
+        String actual = resultAsString;
+
+        if (FilenameUtils.getExtension(classpathFileLocation).equalsIgnoreCase("xml")) {
+            XMLUnit.setNormalizeWhitespace(true);
+            XMLUnit.setIgnoreComments(true);
+            XMLUnit.setIgnoreAttributeOrder(true);
+            assertXMLEqual(expected, actual);
+        } else if(FilenameUtils.getExtension(classpathFileLocation).equalsIgnoreCase("ttl")) {
+
+            ByteArrayInputStream bais = new ByteArrayInputStream(resultAsString.getBytes(CharEncoding.UTF_8));
+
+            Model model = ModelFactory.createDefaultModel();
+            model.read(bais, null, RDFFormat.TURTLE.getName());
+
+            assertEquals(141, model.size());
+
+        } else {
+            assertEquals(expected, actual);
+        }
+
     }
 }
 

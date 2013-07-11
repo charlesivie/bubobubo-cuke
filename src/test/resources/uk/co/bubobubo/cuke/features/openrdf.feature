@@ -29,7 +29,7 @@ Feature: query using open-rdf api
 	  | type      | name   | value                   |
 	  | parameter | query  | ask { ?s ?p ?o }        |
 	  | header    | Accept | text/boolean, */*;q=0.5 |
-	And the string response should be "true"
+	And the string result should be "true"
 
   @Wip
   Scenario: signup create repo and perform construct sparql query
@@ -39,7 +39,6 @@ Feature: query using open-rdf api
 	  | type      | name         | value                                 |
 	  | parameter | query        | construct {?s ?p ?o} where {?s ?p ?o} |
 	  | header    | accept       | application/rdf+xml, */*;q=0.5        |
-	  | header    | Content-Type | application/x-www-form-urlencoded     |
-	Then the response body should match the file "sparql/construct.xml"
+	Then the result should match the file "rdf/construct.ttl"
 
   Scenario: I clean up
