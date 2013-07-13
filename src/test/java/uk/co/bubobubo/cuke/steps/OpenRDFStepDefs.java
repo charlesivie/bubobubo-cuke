@@ -29,6 +29,7 @@ import java.util.List;
 import static org.custommonkey.xmlunit.XMLAssert.assertXMLEqual;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 import static uk.co.bubobubo.cuke.utils.querystrategy.QueryStrategyFactory.askQueryStrategy;
 import static uk.co.bubobubo.cuke.utils.querystrategy.QueryStrategyFactory.constructQueryStrategy;
 import static uk.co.bubobubo.cuke.utils.querystrategy.QueryStrategyFactory.selectQueryStrategy;
@@ -156,26 +157,32 @@ public class OpenRDFStepDefs {
         File file = new ClassPathResource("expected/" + classpathFileLocation).getFile();
 
         String expected = FileUtils.readFileToString(file);
-        String actual = resultAsString;
 
         if (FilenameUtils.getExtension(classpathFileLocation).equalsIgnoreCase("xml")) {
             XMLUnit.setNormalizeWhitespace(true);
             XMLUnit.setIgnoreComments(true);
             XMLUnit.setIgnoreAttributeOrder(true);
-            assertXMLEqual(expected, actual);
+            assertXMLEqual(expected, resultAsString);
         } else if(FilenameUtils.getExtension(classpathFileLocation).equalsIgnoreCase("ttl")) {
 
-            ByteArrayInputStream bais = new ByteArrayInputStream(resultAsString.getBytes(CharEncoding.UTF_8));
+            Model actualModel = readModel(resultAsString);
+            Model expectedModel = readModel(expected);
 
-            Model model = ModelFactory.createDefaultModel();
-            model.read(bais, null, RDFFormat.TURTLE.getName());
-
-            assertEquals(141, model.size());
+            assertTrue(expectedModel.containsAll(actualModel));
+            assertTrue(actualModel.containsAll(expectedModel));
 
         } else {
-            assertEquals(expected, actual);
+            assertEquals(expected, resultAsString);
         }
 
+    }
+
+    private Model readModel(String source) throws Exception {
+        ByteArrayInputStream bais = new ByteArrayInputStream(source.getBytes(CharEncoding.UTF_8));
+
+        Model model = ModelFactory.createDefaultModel();
+        model.read(bais, null, RDFFormat.TURTLE.getName());
+        return model;
     }
 }
 
