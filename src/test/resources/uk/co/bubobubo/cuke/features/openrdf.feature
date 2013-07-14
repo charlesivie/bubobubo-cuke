@@ -37,4 +37,13 @@ Feature: query using open-rdf api
 	  | parameter | query        | construct {?s ?p ?o} where {?s ?p ?o} |
 	Then the result should match the file "rdf/construct.ttl"
 
+  Scenario: execute insert to repo
+    Given I start the http session
+    And I create the test user and repo
+    When I use open-rdf libs to UPDATE "test-repo-1" with the query "sparql/insert.sparql"
+    Then I should have inserted into "test-repo-1" the triples
+      | subject                | predicate                                 | object       |
+      | <http://example/book1> | <http://purl.org/dc/elements/1.1/title>   | "A new book" |
+      | <http://example/book1> | <http://purl.org/dc/elements/1.1/creator> | "A.N.Other"  |
+
   Scenario: I clean up

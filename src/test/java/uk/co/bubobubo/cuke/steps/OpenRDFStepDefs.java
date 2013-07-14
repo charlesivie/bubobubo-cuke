@@ -2,6 +2,7 @@ package uk.co.bubobubo.cuke.steps;
 
 import com.hp.hpl.jena.rdf.model.Model;
 import com.hp.hpl.jena.rdf.model.ModelFactory;
+import cucumber.api.DataTable;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -14,6 +15,7 @@ import org.json.JSONObject;
 import org.openrdf.query.Query;
 import org.openrdf.query.QueryLanguage;
 import org.openrdf.query.QueryResult;
+import org.openrdf.query.Update;
 import org.openrdf.repository.RepositoryConnection;
 import org.openrdf.repository.http.HTTPRepository;
 import org.openrdf.rio.RDFFormat;
@@ -24,7 +26,9 @@ import uk.co.bubobubo.cuke.utils.querystrategy.QueryStrategy;
 
 import java.io.ByteArrayInputStream;
 import java.io.File;
+import java.util.Collections;
 import java.util.List;
+import java.util.Map;
 
 import static org.custommonkey.xmlunit.XMLAssert.assertXMLEqual;
 import static org.junit.Assert.assertEquals;
@@ -43,10 +47,8 @@ public class OpenRDFStepDefs {
     @Value("${test.user.password}")
 	private String password;
 
-	private boolean askResult;
 	private QueryResult queryResult;
 	private String resultAsString;
-
 
 	@When("^the number of explicit triples in from \"([^\"]*)\" is (\\d+)$")
 	public void the_number_of_explicit_triples_in_from_is(String repositoryId, int count) throws Throwable {
@@ -91,14 +93,27 @@ public class OpenRDFStepDefs {
         QueryLanguage queryLanguage = (language == null ? QueryLanguage.SPARQL : QueryLanguage.valueOf(language));
 		Query query = strategy.prepareQuery(connection, queryLanguage, queryParameter);
 
-		if(acceptHeader == null) {
-			// use default format
-			queryResult = strategy.evaluateQuery(query);
-		} else {
-			// set result format accordingly
-			resultAsString = strategy.queryResultAsString(query, acceptHeader);
-		}
+        try {
+            queryResult = strategy.evaluateQuery(query);
+        } catch (Exception e) {
+            // ignore
+        }
+        resultAsString = strategy.queryResultAsString(query, acceptHeader);
 	}
+
+    @When("^I use open-rdf libs to UPDATE \"([^\"]*)\" with the query \"([^\"]*)\"$")
+    public void I_use_open_rdf_libs_to_UPDATE_with_the_query(String repositoryId, String classpathFileLocation)
+            throws Exception {
+
+        File file = new ClassPathResource("payload/" + classpathFileLocation).getFile();
+        String sparql = FileUtils.readFileToString(file);
+
+        RepositoryConnection connection = connect(repositoryId);
+
+        Update insert = connection.prepareUpdate(QueryLanguage.SPARQL, sparql);
+        insert.execute();
+
+    }
 
 	private RepositoryConnection connect(final String repositoryId) throws Exception {
 		HTTPRepository repository = new HTTPRepository(repositoryBaseUri, repositoryId);
@@ -137,7 +152,6 @@ public class OpenRDFStepDefs {
     public void I_should_get_an_empty_resultset_with_no_errors() throws Throwable {
 
         assertNotNull(queryResult);
-        //assertFalse(queryResult.hasNext());
     }
 
     @And("^the boolean result should be \"([^\"]*)\"$")
@@ -178,11 +192,41 @@ public class OpenRDFStepDefs {
     }
 
     private Model readModel(String source) throws Exception {
+        return readModel(source, RDFFormat.TURTLE.getName());
+    }
+
+    private Model readModel(String source, String rdfFormat) throws Exception {
+
+        if(rdfFormat == null) {
+            rdfFormat = RDFFormat.TURTLE.getName();
+        }
+
         ByteArrayInputStream bais = new ByteArrayInputStream(source.getBytes(CharEncoding.UTF_8));
 
         Model model = ModelFactory.createDefaultModel();
-        model.read(bais, null, RDFFormat.TURTLE.getName());
+        model.read(bais, null, rdfFormat);
         return model;
+    }
+
+    @Then("^I should have inserted into \"([^\"]*)\" the triples$")
+    public void I_should_have_inserted_into_the_triples(String repositoryId, DataTable params)
+            throws Throwable {
+
+        List<Map<String, String>> rows = params.asMaps();
+        for(Map<String, String> row : rows) {
+            String subject = row.get("subject");
+            String predicate = row.get("predicate");
+            String object = row.get("object");
+            String askQuery = "ASK WHERE { " + subject + " " + predicate + " " + object + " }";
+            RequestAttribute query = new RequestAttribute();
+            query.setName("query");
+            query.setType("parameter");
+            query.setValue(askQuery);
+            doInSesame(repositoryId, Collections.singletonList(query), askQueryStrategy());
+            assertTrue((Boolean)queryResult.next());
+        }
+
+
     }
 }
 
