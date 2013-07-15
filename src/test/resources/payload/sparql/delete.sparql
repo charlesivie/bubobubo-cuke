@@ -2,6 +2,6 @@ PREFIX dc: <http://purl.org/dc/elements/1.1/>
 
 DELETE DATA
 {
-    <http://example/book2>  dc:title    "A new book" ;
+    <http://example/book1>  dc:title    "A new book" ;
                             dc:creator  "A.N.Other" .
 }

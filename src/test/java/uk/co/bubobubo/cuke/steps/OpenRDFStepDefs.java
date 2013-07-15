@@ -32,6 +32,7 @@ import java.util.Map;
 
 import static org.custommonkey.xmlunit.XMLAssert.assertXMLEqual;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 import static uk.co.bubobubo.cuke.utils.querystrategy.QueryStrategyFactory.askQueryStrategy;
@@ -78,8 +79,30 @@ public class OpenRDFStepDefs {
 
 	}
 
+    private void ask(String repositoryId, String query) throws Exception {
+        doInSesame(repositoryId, query, askQueryStrategy());
+    }
+
+    private void select(String repositoryId, String query) throws Exception {
+        doInSesame(repositoryId, query, selectQueryStrategy());
+    }
+
+    private void construct(String repositoryId, String query) throws Exception {
+        doInSesame(repositoryId, query, constructQueryStrategy());
+    }
+
+    private void doInSesame(String repositoryId, String query, QueryStrategy queryStrategy) throws Exception {
+
+        RequestAttribute requestAttribute = new RequestAttribute();
+        requestAttribute.setName("query");
+        requestAttribute.setType("parameter");
+        requestAttribute.setValue(query);
+
+        doInSesame(repositoryId, Collections.singletonList(requestAttribute), queryStrategy);
+    }
+
 	private void doInSesame(String repositoryId, List<RequestAttribute> params, QueryStrategy strategy)
-            throws Throwable {
+            throws Exception {
 
         resultAsString = null;
         queryResult = null;
@@ -110,8 +133,8 @@ public class OpenRDFStepDefs {
 
         RepositoryConnection connection = connect(repositoryId);
 
-        Update insert = connection.prepareUpdate(QueryLanguage.SPARQL, sparql);
-        insert.execute();
+        Update update = connection.prepareUpdate(QueryLanguage.SPARQL, sparql);
+        update.execute();
 
     }
 
@@ -218,15 +241,28 @@ public class OpenRDFStepDefs {
             String predicate = row.get("predicate");
             String object = row.get("object");
             String askQuery = "ASK WHERE { " + subject + " " + predicate + " " + object + " }";
-            RequestAttribute query = new RequestAttribute();
-            query.setName("query");
-            query.setType("parameter");
-            query.setValue(askQuery);
-            doInSesame(repositoryId, Collections.singletonList(query), askQueryStrategy());
-            assertTrue((Boolean)queryResult.next());
+            ask(repositoryId, askQuery);
+            assertTrue((Boolean) queryResult.next());
         }
+    }
 
+    @Then("^I should have deleted from \"([^\"]*)\" the triples$")
+    public void I_should_have_deleted_from_the_triples(String repositoryId, DataTable params)
+            throws Throwable {
 
+//        String select = "PREFIX dc: <http://purl.org/dc/elements/1.1/>\n\nSELECT ?title ?author WHERE { ?book dc:title ?title . ?book dc:creator ?author . }";
+//        select(repositoryId, select);
+
+        List<Map<String, String>> rows = params.asMaps();
+        for(Map<String, String> row : rows) {
+            String subject = row.get("subject");
+            String predicate = row.get("predicate");
+            String object = row.get("object");
+            String askQuery = "ASK WHERE { " + subject + " " + predicate + " " + object + " }";
+            ask(repositoryId, askQuery);
+            assertFalse(Boolean.valueOf(resultAsString));
+            assertFalse((Boolean) queryResult.next());
+        }
     }
 }
 
