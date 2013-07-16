@@ -255,11 +255,12 @@ public class OpenRDFStepDefs {
 
         List<Map<String, String>> rows = params.asMaps();
         for(Map<String, String> row : rows) {
-            String subject = row.get("subject");
-            String predicate = row.get("predicate");
-            String object = row.get("object");
-            String askQuery = "ASK WHERE { " + subject + " " + predicate + " " + object + " }";
-            ask(repositoryId, askQuery);
+            ask(repositoryId,
+					"ASK WHERE { " +
+						row.get("subject") + " " +
+						row.get("predicate") + " " +
+						row.get("object") + " }"
+			);
             assertFalse(Boolean.valueOf(resultAsString));
             assertFalse((Boolean) queryResult.next());
         }
