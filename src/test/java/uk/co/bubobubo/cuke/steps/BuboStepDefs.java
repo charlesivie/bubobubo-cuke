@@ -188,7 +188,7 @@ public class BuboStepDefs {
 
 	@Then("^I should get a (\\d+) response code$")
 	public void I_should_get_a_response_code(int code) throws Throwable {
-		assertEquals(code, response.getStatusLine().getStatusCode());
+		assertEquals("response: "+HttpUtils.responseAsString, code, response.getStatusLine().getStatusCode());
 	}
 
 	@And("^the response should be \"([^\"]*)\"$")
