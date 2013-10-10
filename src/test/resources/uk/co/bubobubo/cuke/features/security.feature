@@ -8,7 +8,7 @@ Feature: query for sparql responses as various users with varying access rights
 
 # todo - fix this to work in httpclient - manual test returns a 403, as expected, but httpclient does something funky because the username is an email address
 #
-#  Scenario: user performs get request, should get 401
+#  Scenario: user performs get request, should get 403
 #    Given I start the http session
 #    And I create the test user and repo
 #    And I end the http session

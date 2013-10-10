@@ -1,0 +1,12 @@
+{
+    "user": {
+        "username": null,
+        "password": "password",
+        "passwordConfirm": "password",
+        "enabled": true
+    },
+    "email": "test@user.com",
+    "company": null,
+    "firstName": null,
+    "lastName": null
+}

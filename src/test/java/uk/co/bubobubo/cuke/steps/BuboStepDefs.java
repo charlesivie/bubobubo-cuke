@@ -112,6 +112,13 @@ public class BuboStepDefs {
         response = HttpUtils.httpPost(urlWithCredentials, params, fileLocation);
     }
 
+    @When("^I post \"([^\"]*)\" to sparqlr \"([^\"]*)\" as unauth with$")
+    public void I_post_to_unauth(String fileLocation, String path, List<RequestAttribute> params) throws Throwable {
+
+        String urlWithCredentials = sparqlrUrl + path;
+        response = HttpUtils.httpPost(urlWithCredentials, params, fileLocation);
+    }
+
 	@When("^I get \"([^\"]*)\" as unauthorised with$")
 	public void I_get_unauth(String path, List<RequestAttribute> params) throws Throwable {
 
