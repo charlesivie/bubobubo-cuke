@@ -112,11 +112,32 @@ public class BuboStepDefs {
         response = HttpUtils.httpPost(urlWithCredentials, params, fileLocation);
     }
 
+    @When("^I post \"([^\"]*)\" to sparqlr \"([^\"]*)\" with$")
+    public void I_post_to_sparqlr_with(String fileLocation, String path, List<RequestAttribute> params) throws Throwable {
+
+        String urlWithCredentials = sparqlrUrl + path;
+        response = HttpUtils.httpPost(urlWithCredentials, params, fileLocation);
+    }
+
+    @When("^I put \"([^\"]*)\" to sparqlr \"([^\"]*)\" with$")
+    public void I_put_to_sparqlr_with(String fileLocation, String path, List<RequestAttribute> params) throws Throwable {
+
+        String urlWithCredentials = sparqlrUrl + path;
+        response = HttpUtils.httpPut(urlWithCredentials, params, fileLocation);
+    }
+
     @When("^I post \"([^\"]*)\" to sparqlr \"([^\"]*)\" as unauth with$")
     public void I_post_to_unauth(String fileLocation, String path, List<RequestAttribute> params) throws Throwable {
 
         String urlWithCredentials = sparqlrUrl + path;
         response = HttpUtils.httpPost(urlWithCredentials, params, fileLocation);
+    }
+
+    @When("^I put \"([^\"]*)\" to sparqlr \"([^\"]*)\" as unauth with$")
+    public void I_put_to_unauth(String fileLocation, String path, List<RequestAttribute> params) throws Throwable {
+
+        String urlWithCredentials = sparqlrUrl + path;
+        response = HttpUtils.httpPut(urlWithCredentials, params, fileLocation);
     }
 
 	@When("^I get \"([^\"]*)\" as unauthorised with$")

@@ -123,6 +123,40 @@ public class HttpUtils {
 		return execute(method);
 	}
 
+    public static HttpResponse httpPut(String relativeUri, List<RequestAttribute> parameters, String fileLocation) throws IOException, URISyntaxException {
+
+
+        ClassPathResource classPathResource = new ClassPathResource("payload/" + fileLocation);
+        InputStream inputStream = classPathResource.getInputStream();
+
+        HttpPut method = new HttpPut(relativeUri);
+        URIBuilder uriBuilder = new URIBuilder(method.getURI());
+        String contentType = null;
+
+        for (RequestAttribute attribute : parameters) {
+            if (attribute.getType().equalsIgnoreCase("HEADER")) {
+                method.addHeader(attribute.getName(), attribute.getValue());
+                if (attribute.getName().equalsIgnoreCase("content-type")) {
+                    contentType = attribute.getValue();
+                }
+            }
+            if (attribute.getType().equalsIgnoreCase("PARAMETER")) {
+                uriBuilder.addParameter(attribute.getName(), attribute.getValue());
+            }
+        }
+
+        method.setURI(uriBuilder.build());
+
+        addBodyToClient(
+                inputStream,
+                classPathResource.getFile().length(),
+                ContentType.parse(contentType),
+                method
+        );
+
+        return execute(method);
+    }
+
 	public static HttpResponse httpPost(String relativeUri, Map<String, Object> parameters, Map<String, String> headers) throws IOException {
 		return httpPost(relativeUri, parameters, headers, null);
 

@@ -8,5 +8,6 @@
     "email": "test@user.com",
     "company": null,
     "firstName": null,
-    "lastName": null
+    "lastName": null,
+    "id": 1
 }
