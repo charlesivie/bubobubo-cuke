@@ -1,5 +1,6 @@
 package uk.co.bubobubo.cuke.steps;
 
+import com.jayway.restassured.path.json.JsonPath;
 import cucumber.api.DataTable;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
@@ -20,6 +21,8 @@ import uk.co.bubobubo.cuke.utils.HttpUtils;
 import java.io.File;
 import java.util.*;
 
+import static com.jayway.restassured.RestAssured.expect;
+import static com.jayway.restassured.RestAssured.given;
 import static org.custommonkey.xmlunit.XMLAssert.assertXMLEqual;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
@@ -79,10 +82,10 @@ public class BuboStepDefs {
         response = HttpUtils.httpGet(urlWithCredentials, Collections.<RequestAttribute>emptyList());
     }
 
-    @When("^I get \"([^\"]*)\" as unauthorised$")
-    public void I_get_unauth(String path) throws Throwable {
+    @When("^I get \"([^\"]*)\" from sparqlr$")
+    public void I_get_sparqlr(String path) throws Throwable {
 
-        String urlWithCredentials = bubobuboUrl + path;
+        String urlWithCredentials = sparqlrUrl + path;
         response = HttpUtils.httpGet(urlWithCredentials, Collections.<RequestAttribute>emptyList());
     }
 
@@ -270,6 +273,12 @@ public class BuboStepDefs {
         response = HttpUtils.httpDelete(urlWithCredentials);
     }
 
+    @When("^I delete \"([^\"]*)\" from sparqlr$")
+    public void I_delete_from_sparqlr(String path) throws Throwable {
+        String urlWithCredentials = sparqlrUrl+path;
+        response = HttpUtils.httpDelete(urlWithCredentials);
+    }
+
     @When("^I get \"([^\"]*)\" as user with$")
     public void I_get_as_user_with(String path, List<RequestAttribute> params) throws Throwable {
 		Credentials defaultcreds = new UsernamePasswordCredentials(user, password);
@@ -315,5 +324,10 @@ public class BuboStepDefs {
     public void not_yet_implemented() throws Throwable {
         // Express the Regexp above with the code you wish you had
         throw new Exception("Implement me");
+    }
+
+    @And("^the response json path \"([^\"]*)\" should match \"([^\"]*)\"$")
+    public void the_response_json_path_should_match(String path, String expected) throws Throwable {
+        assertEquals(expected, String.valueOf(JsonPath.given(HttpUtils.responseAsString).get(path)));
     }
 }

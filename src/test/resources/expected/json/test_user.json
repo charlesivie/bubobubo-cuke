@@ -1,8 +1,6 @@
 {
-    "id" : 1,
-    "username": "charlie@gmail.com",
-    "email": "test@user.com",
-    "company": null,
-    "firstName": null,
-    "lastName": null
+    "id": 10,
+    "password": "password",
+    "username": "charlie@whatever.com",
+    "passwordConfirm": "password"
 }
