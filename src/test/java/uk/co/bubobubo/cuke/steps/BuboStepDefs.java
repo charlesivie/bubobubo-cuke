@@ -5,6 +5,7 @@ import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import cucumber.runtime.PendingException;
 import org.apache.commons.io.FileUtils;
 import org.apache.http.HttpResponse;
 import org.apache.http.auth.Credentials;
@@ -309,4 +310,10 @@ public class BuboStepDefs {
 
 		JSONAssert.assertEquals(expected, actual, false);
 	}
+
+    @Given("^not yet implemented$")
+    public void not_yet_implemented() throws Throwable {
+        // Express the Regexp above with the code you wish you had
+        throw new Exception("Implement me");
+    }
 }
