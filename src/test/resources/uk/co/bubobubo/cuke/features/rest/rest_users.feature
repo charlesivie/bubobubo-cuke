@@ -15,15 +15,20 @@ Feature: rest operations for user
     And the response json path "passwordConfirm" should match "password"
 
   Scenario: update
-    Given I put "json/test_user.json" to sparqlr "/rest/users" with
+    Given I post "json/test_user.json" to sparqlr "/rest/users" with
+      | type   | name         | value            |
+      | header | Accept       | application/json |
+      | header | Content-Type | application/json |
+    And I should get a 200 response code
+    When I put "json/test_user_update.json" to sparqlr "/rest/users" with
       | type   | name         | value            |
       | header | Accept       | application/json |
       | header | Content-Type | application/json |
     Then I should get a 200 response code
     And the response json path "id" should match "10"
-    And the response json path "username" should match "charlie@whatever.com"
-    And the response json path "password" should match "password"
-    And the response json path "passwordConfirm" should match "password"
+    And the response json path "username" should match "test@user.com"
+    And the response json path "password" should match "updated"
+    And the response json path "passwordConfirm" should match "updated"
 
   Scenario: delete
     Given I delete "/rest/users/10" from sparqlr
@@ -45,9 +50,27 @@ Feature: rest operations for user
     And the response json path "password" should match "password"
     And the response json path "passwordConfirm" should match "password"
 
-  Scenario: update fails if username not valid email address
-
   Scenario: create fails if username not valid email address
+    Given I post "json/test_user_invalid_email.json" to sparqlr "/rest/users" with
+      | type   | name         | value            |
+      | header | Accept       | application/json |
+      | header | Content-Type | application/json |
+    Then I should get a 400 response code
+    And the response json path "id" should match "10"
+    And the response json path "username" should match "not_valid_email"
+    And the response json path "password" should match "password"
+    And the response json path "passwordConfirm" should match "password"
+
+  Scenario: update fails if username not valid email address
+    Given I put "json/test_user_invalid_email.json" to sparqlr "/rest/users" with
+      | type   | name         | value            |
+      | header | Accept       | application/json |
+      | header | Content-Type | application/json |
+    Then I should get a 400 response code
+    And the response json path "id" should match "10"
+    And the response json path "username" should match "not_valid_email"
+    And the response json path "password" should match "password"
+    And the response json path "passwordConfirm" should match "password"
 
   Scenario: update fails if id does not exists
 

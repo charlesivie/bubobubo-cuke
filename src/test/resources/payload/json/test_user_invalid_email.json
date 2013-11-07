@@ -1,0 +1,6 @@
+{
+    "id": 10,
+    "password": "password",
+    "username": "not_valid_email",
+    "passwordConfirm": "password"
+}

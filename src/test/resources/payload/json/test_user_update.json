@@ -1,7 +1,6 @@
 {
-    "user": null,
-    "email": "test@user.com",
-    "company": "updated",
-    "firstName": "updated",
-    "lastName": "updated"
+    "id": 10,
+    "password": "updated",
+    "username": "test@user.com",
+    "passwordConfirm": "updated"
 }
